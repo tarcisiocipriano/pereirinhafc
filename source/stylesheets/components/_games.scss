@@ -1,0 +1,67 @@
+.games {
+  background-color: #273147;
+  
+  &__container {
+    padding-top: 80px;
+  }
+
+  /* ---------- component ---------- */ 
+  &__component {
+    position: relative;
+    width: auto;
+    max-width: 744px;
+
+    &__blue {
+
+    }
+
+    &--red {
+      // float: right;
+    }
+  }
+
+  &__field {
+    width: auto;
+    max-width: 744px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ---------- date ---------- */ 
+  &__date {
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+
+    position: absolute;
+    top: -30px;
+    left: 0;
+
+    @include atSmall {
+      font-size: 2.5rem;
+      top: -50px;
+    }
+  }
+
+  /* ---------- teams ---------- */ 
+  &__team {
+    width: auto;
+    height: 60px;
+    position: absolute;
+    top: -50px;
+
+    @include atSmall {
+      height: 80px;
+    }
+    
+    &--left {
+      left: 26%;
+    }
+
+    &--right {
+      right: 26%;
+    }
+  }
+
+}

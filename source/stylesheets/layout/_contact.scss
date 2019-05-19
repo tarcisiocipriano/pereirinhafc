@@ -1,0 +1,46 @@
+.contact {
+  background-color: #1C2335;
+  
+  input, textarea {
+    color: white;
+    background-color: #262C3C !important;
+    border: none;
+
+    &, &:hover, &:focus, &:active {
+      color: white;
+      background-color: #262C3C;
+    }
+  }
+
+  &__social {
+    width: 167px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    float: left;
+    margin-right: 8px;
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    background-color: #171E2D;
+    color: white;
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    font-size: 2rem;
+    text-align: center;
+
+    transition: .2s;
+    &:hover {
+      background-color: #CB1A2B;
+      color: white;
+    }
+  }
+}

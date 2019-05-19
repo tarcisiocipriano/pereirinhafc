@@ -1,0 +1,22 @@
+.navbar {
+  z-index: 1;
+
+  background-color: #1C2334;
+
+  @include atSmall {
+    height: 100px;
+  }
+
+  &__logo {
+
+  }
+
+  &__img {
+    position: absolute;
+    top: 10px;
+    width: 50px;
+    @include atSmall {
+      width: 100px;
+    }
+  }
+}

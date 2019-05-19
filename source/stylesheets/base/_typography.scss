@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "sketch";
+  src: url("assets/fonts/Sketch_College.ttf");
+}
+
+body {
+  // font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-title {
+  font-family: "sketch";
+  font-size: 4rem;
+  color: white;
+
+  &--dark {
+    color: black;
+  }
+  
+  @include atSmall {
+    font-size: 8rem;
+  }
+
+
+}

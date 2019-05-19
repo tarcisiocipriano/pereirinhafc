@@ -1,0 +1,28 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin atSmall {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
