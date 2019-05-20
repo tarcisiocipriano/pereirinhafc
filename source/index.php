@@ -9,7 +9,24 @@
       <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+
+      <?php
+        $firstNews = true;
+        while(have_posts()) {
+          the_post(); 
+
+          if($firstNews) echo '<div class="carousel-item active">'; else echo '<div class="carousel-item">'; ?>
+            <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5><?php the_title(); ?></h5>
+              <p><?php if(has_excerpt()) {echo get_the_excerpt();} else {echo wp_trim_words(get_the_content(), 8);} ?></p>
+            </div>
+          </div>
+
+        <?php $firstNews = false; }
+      ?>
+
+      <!-- <div class="carousel-item active">
         <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
@@ -29,8 +46,10 @@
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
-      </div>
+      </div> -->
+
     </div>
+    
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -133,7 +152,7 @@
             <a href="#" class="card w100">
               <div class="card-img-container">
                 <div class="card-img-overlay"></div>
-                <?php the_post_thumbnail('newsThumbnail'); ?>
+                <?php the_post_thumbnail('newsThumbnail', array('class' => 'card-img')); ?>
                 <!-- <img class="card-img-top" src="<?php the_post_thumbnail_url('newsThumbnails'); ?>" alt="news photo"> -->
               </div>
               <div class="card-body">
@@ -152,43 +171,6 @@
         <?php }
       ?>
 
-
-      <!-- <div class="col-lg-4 news--mb">
-        <a href="#" class="card w100">
-          <div class="card-img-container">
-            <div class="card-img-overlay"></div>
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('assets/images/futebol1.jpg'); ?>" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 news--mb">
-        <a href="#" class="card w100">
-          <div class="card-img-container">
-            <div class="card-img-overlay"></div>
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('assets/images/futebol2.jpg'); ?>" alt="Card image cap">
-          </div>
-          <div class="card-body news--mb">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4">
-        <a href="#" class="card w100">
-          <div class="card-img-container">
-            <div class="card-img-overlay"></div>
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('assets/images/futebol3.jpg'); ?>" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </a>
-      </div> -->
 
     </div>
   </div>
@@ -217,13 +199,48 @@
         <!-- Swiper -->
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide--1">Slide 1</div>
-            <div class="swiper-slide swiper-slide--2">Slide 2</div>
-            <div class="swiper-slide swiper-slide--3">Slide 3</div>
-            <div class="swiper-slide swiper-slide--4">Slide 4</div>
-            <div class="swiper-slide swiper-slide--5">Slide 5</div>
-            <div class="swiper-slide swiper-slide--6">Slide 6</div>
-            <div class="swiper-slide swiper-slide--7">Slide 7</div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Nilda Dias</h4>
+                <p class="swiper-slide__job">Coordenadora</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Elias Marques</h4>
+                <p class="swiper-slide__job">Técnico</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Alex Pinheiro</h4>
+                <p class="swiper-slide__job">Preparador físico</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Raquel Laureano</h4>
+                <p class="swiper-slide__job">Captação de recursos</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Fernanda Sá</h4>
+                <p class="swiper-slide__job">Captação de recursos</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Romulo Silva</h4>
+                <p class="swiper-slide__job">Contador</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide__content">
+                <h4 class="swiper-slide__name">Hugo Souto</h4>
+                <p class="swiper-slide__job">Advogado</p>
+              </div>
+            </div>
           </div>
           <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
@@ -234,8 +251,15 @@
 
         <!-- Initialize Swiper -->
         <script>
+          if ($(window).width() < 768) {
+            var sliderPerView = 1;
+          }
+          else {
+            var sliderPerView = 4;
+          }
+          
           var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
+            slidesPerView: sliderPerView,
             spaceBetween: 30,
             pagination: {
               el: '.swiper-pagination',

@@ -13,11 +13,10 @@
 //# sourceMappingURL=swiper.min.js.map
 
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('navbar--dark-blue');
+  } else {
+    $('nav').removeClass('navbar--dark-blue');
+  }
 });
