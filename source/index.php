@@ -16,7 +16,9 @@
           the_post(); 
 
           if($firstNews) echo '<div class="carousel-item active">'; else echo '<div class="carousel-item">'; ?>
-            <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
+          <div style="background-image: url('<?php echo get_the_post_thumbnail('newsCarousel'); ?>')"></div>
+            <!-- <?php the_post_thumbnail('newsCarousels', array('class' => 'd-block w-100 h-100')); ?> -->
+            <!-- <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="..."> -->
             <div class="carousel-caption d-none d-md-block">
               <h5><?php the_title(); ?></h5>
               <p><?php if(has_excerpt()) {echo get_the_excerpt();} else {echo wp_trim_words(get_the_content(), 8);} ?></p>
@@ -25,28 +27,6 @@
 
         <?php $firstNews = false; }
       ?>
-
-      <!-- <div class="carousel-item active">
-        <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </div>
-      </div> -->
 
     </div>
     
