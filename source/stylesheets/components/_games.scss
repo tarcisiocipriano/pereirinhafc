@@ -11,13 +11,16 @@
     width: auto;
     max-width: 744px;
 
-    &__blue {
-
+    &--after-first {
+      margin-top: 30px;
     }
 
-    &--red {
-      // float: right;
+    @include atMedium {
+      &--after-first {
+        margin-top: 50px;
+      }
     }
+
   }
 
   &__field {
@@ -35,26 +38,38 @@
     font-size: 1.25rem;
 
     position: absolute;
-    top: -30px;
+    top: -40px;
     left: 0;
 
-    @include atSmall {
-      font-size: 2.5rem;
+    &--after-first {
+      font-size: 1.25rem;
+    }
+
+    @include atSmallest--teams {
+      font-size: 2.25rem;
       top: -50px;
+    }
+
+    @include atMedium {
+      &--after-first {
+        font-size: 1.6rem;
+      }
+    }
+
+    @include atLarge {
+      &--after-first {
+        font-size: 1.75rem;
+      }
     }
   }
 
   /* ---------- teams ---------- */ 
   &__team {
     width: auto;
-    height: 60px;
+    height: 50px;
     position: absolute;
     top: -50px;
 
-    @include atSmall {
-      height: 80px;
-    }
-    
     &--left {
       left: 26%;
     }
@@ -62,6 +77,29 @@
     &--right {
       right: 26%;
     }
+
+    @include atSmallest--teams {
+      height: 60px;
+    }
+
+    @include atSmall {
+      height: 80px;
+    }
+
+    @include atMedium {
+      &--after-first {
+        height: 60px;
+      }
+    }
   }
 
+}
+
+.col {
+  
+  @include atMedium {
+    &--after-first {
+      margin-top: -100px;
+    }
+  }
 }

@@ -67,8 +67,8 @@
       ));
     ?>
 
-    <!-- LOOP -->
-    <div class="col-lg-8">
+    <!-- LOOP First Game -->
+    <div class="col-lg-7">
       <?php 
         $gamesCount = 1;
         while($gamePosts->have_posts()) {
@@ -88,19 +88,20 @@
       ?>
     </div> <!-- /col -->
 
-    <div class="col-lg-4">
+    <!-- LOOP After First Game -->
+    <div class="col-lg-5 col--after-first">
       <?php
         while($gamePosts->have_posts()) {
           $gamePosts->the_post();
           
           if($gamesCount > 2) { ?>
-            <div class="games__component games__component--blue">
-              <div class="games__date"><?php
+            <div class="games__component games__component--after-first">
+              <div class="games__date games__date--after-first"><?php
                 $gameDate = new DateTime(get_field('data_do_jogo'));
                 echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
               </div> <!-- /games__date -->
-              <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-              <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+              <img class="games__team games__team--left games__team--after-first" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+              <img class="games__team games__team--right games__team--after-first" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
               <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
             </div> <!-- /games__component -->
           <?php   }
@@ -271,19 +272,7 @@
     <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
 
 
-    <ul class="contact__social clearfix">
-      <div class="contact__social-container">
-        <li class="contact__item">
-          <a class="contact__link" target="_blank" href="https://www.facebook.com/PereirinhaFC/"><i class="fab fa-facebook-f"></i></a>
-        </li>
-        <li class="contact__item">
-          <a class="contact__link" target="_blank" href="https://www.instagram.com/pereirinhafc/"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li class="contact__item">
-          <a class="contact__link" target="_blank" href="https://www.youtube.com/user/escolinhapfc/videos/"><i class="fab fa-youtube"></i></a>
-        </li>
-      </div>
-    </ul>
+    
     
   </div>
 </div>
