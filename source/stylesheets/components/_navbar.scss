@@ -1,14 +1,19 @@
 .navbar {
   z-index: 1;
   transition: .2s;
+  background-color: rgba(28, 35, 52, .5);
+
+  @include atSmall {
+    height: 80px;
+  }
   
   &--dark-blue {
     background-color: #1C2334;
     box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
-  }
-
-  @include atSmall {
-    height: 100px;
+    
+    @include atSmall {
+      height: 60px;
+    }
   }
 
   &__img {
@@ -16,7 +21,7 @@
     top: 10px;
     width: 50px;
     @include atSmall {
-      width: 100px;
+      width: 80px;
     }
   }
 }

@@ -10,15 +10,46 @@
     </ol>
     <div class="carousel-inner">
 
-      <?php
+      <div class="carousel-item active">
+        <picture>
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc01.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc01-small.png'); ?>" alt="First slide">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>...</h5>
+          <p>...</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc02.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc02-small.png'); ?>" alt="Second slide">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>...</h5>
+          <p>...</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc03.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc03-small.png'); ?>" alt="Third slide">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>...</h5>
+          <p>...</p>
+        </div>
+      </div>
+      
+      <!-- <?php
         $firstNews = true;
         while(have_posts()) {
           the_post(); 
 
           if($firstNews) echo '<div class="carousel-item active">'; else echo '<div class="carousel-item">'; ?>
           <div style="background-image: url('<?php echo get_the_post_thumbnail('newsCarousel'); ?>')"></div>
-            <!-- <?php the_post_thumbnail('newsCarousels', array('class' => 'd-block w-100 h-100')); ?> -->
-            <!-- <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="..."> -->
+            <?php the_post_thumbnail('newsCarousels', array('class' => 'd-block w-100 h-100')); ?>
+            <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php the_title(); ?></h5>
               <p><?php if(has_excerpt()) {echo get_the_excerpt();} else {echo wp_trim_words(get_the_content(), 8);} ?></p>
@@ -26,7 +57,7 @@
           </div>
 
         <?php $firstNews = false; }
-      ?>
+      ?> -->
 
     </div>
     

@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <nav class="navbar fixed-top navbar-expand-md">
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark">
     <div class="container">
       <h1 class="navbar__logo">
         <img class="navbar__img" src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="PereirinhaFC" class>
