@@ -3,37 +3,33 @@
 <!-- Carousel -->
 <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
+    
     <div class="carousel-inner">
 
       <div class="carousel-item active">
         <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc01.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc01-small.png'); ?>" alt="First slide">
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel01-wide.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel01.png'); ?>" alt="First slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
+          <h5>Pereirinha Futebol Clube</h5>
+          <p>Futebol Cidadão</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel02-wide.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel02.png'); ?>" alt="Second slide">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
           <p>...</p>
         </div>
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc02.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc02-small.png'); ?>" alt="Second slide">
-        </picture>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/pfc03.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/pfc03-small.png'); ?>" alt="Third slide">
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel03-wide.png'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel03.png'); ?>" alt="Third slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
           <h5>...</h5>
@@ -191,11 +187,18 @@
 <!-- Quem Somos -->
 <div class="about pt-5 pb-5">
   <div class="container">
-    <h2 class="main-title">Quem Somos</h2>
+    <h2 class="main-title main-title--blue">Quem Somos</h2>
 
     <div class="row">
       <div class="col-md-6">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>O projeto é desenvolvido no Alto do Pereirinha, Bairro de Água Fria, Zona norte do Recife-PE.</p>
+        <p>Atendemos anualmente 150 alunos dos 5 aos 17 anos, moradores do bairro de Água Fria e outras 12 comunidades próximas.</p>
+        <h3>Missão</h3>
+        <p>Usar o futebol como ferramenta de inclusão social, educação e cidadania.</p>
+        <h3>Visão</h3>
+        <p>Ser referência no trabalho com crianças e adolescentes por meio das praticas e ações que valorizem a transformação social.</p>
+        <h3>Valores</h3>
+        <p>Responsabilidade social, ética, respeito e transparência.</p>
       </div>
 
       <div class="col-md-6">
@@ -286,9 +289,17 @@
 </div> <!-- /about -->
 
 <!-- Doacoes -->
-<!-- <div class="container pt-5 pb-5"> -->
-  <!-- <h2>Doações</h2> -->
-<!-- </div> -->
+<div class="donations pt-5 pb-5">
+  <div class="container">
+    <h2 class="main-title">Doações</h2>
+
+    <p>Contribua para este sonho continuar crescendo</p>
+    <button class="btn btn-primary">Clique aqui</button>
+
+    <div class="donations__kids"></div>
+  </div>
+
+</div>
 
 <!-- Location -->
 <div class="location">

@@ -1,0 +1,29 @@
+.donations {
+  background-image: url("assets/images/backgrounds/donations.png");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  position: relative;
+
+  &__kids {
+    width: 622px;
+    height: 622px;
+    background-image: url("assets/images/elements/kids.png");
+    background-color: $mainRed;
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+
+    &::before { 
+      content: "";
+      display: block;
+      margin-left: -200px;
+      width: 200px;
+      height: 622px;
+      border: 200px solid $mainRed;
+      border-top: 620px solid transparent;
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
+}

@@ -11,7 +11,7 @@
   <nav class="navbar fixed-top navbar-expand-md navbar-dark">
     <div class="container">
       <h1 class="navbar__logo">
-        <img class="navbar__img" src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="PereirinhaFC" class>
+        <img class="navbar__img" src="<?php echo get_theme_file_uri('assets/images/teams/logo.png'); ?>" alt="PereirinhaFC" class>
       </h1>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -19,6 +19,14 @@ body {
   &--dark {
     color: black;
   }
+
+  &--blue {
+    color: $mainBlueDark;
+  }
+
+  &--red {
+    color: $mainRed;
+  }
   
   @include atSmall {
     font-size: 6rem;
