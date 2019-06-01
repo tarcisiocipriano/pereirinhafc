@@ -291,10 +291,13 @@
 <!-- Doacoes -->
 <div class="donations pt-5 pb-5">
 
-  <img class="donations__background"
-       srcset="<?php echo get_theme_file_uri('assets/images/backgrounds/donations-small-i.jpg 768w, ');
-                    echo get_theme_file_uri('assets/images/backgrounds/donations-medium-i.jpg 1200w, ');
-                     echo get_theme_file_uri('assets/images/backgrounds/donations-large-i.jpg 1920w'); ?>  " alt="...">
+  <div class="donations__background-container">
+    <img class="donations__background"
+        srcset="<?php echo get_theme_file_uri('assets/images/backgrounds/donations-small-i.jpg 768w, ');
+                      echo get_theme_file_uri('assets/images/backgrounds/donations-medium-i.jpg 1200w, ');
+                      echo get_theme_file_uri('assets/images/backgrounds/donations-large-i.jpg 1920w'); ?>  " alt="..."s>
+  </div>
+  
 
   <div class="container">
     
