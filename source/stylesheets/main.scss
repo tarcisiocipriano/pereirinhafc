@@ -20,4 +20,28 @@ $theme-colors: (
   // "danger": #ff4136
 );
 
+
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn {
+  border: 1px solid $white;
+  color: $white;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--hover-red {
+    &:hover, &:focus {
+      background-color: $mainRed;
+      border: 1px solid $mainRed;
+      color: $white;
+    }
+  }
+
+}

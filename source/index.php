@@ -290,13 +290,32 @@
 
 <!-- Doacoes -->
 <div class="donations pt-5 pb-5">
+
+  <img class="donations__background"
+       srcset="<?php echo get_theme_file_uri('assets/images/backgrounds/donations-small-i.jpg 768w, ');
+                    echo get_theme_file_uri('assets/images/backgrounds/donations-medium-i.jpg 1200w, ');
+                     echo get_theme_file_uri('assets/images/backgrounds/donations-large-i.jpg 1920w'); ?>  " alt="...">
+
   <div class="container">
-    <h2 class="main-title">Doações</h2>
+    
+    
+    <div class="row">
+      <div class="col-sm-12 col-lg-8">
+          <h2 class="main-title donations__title">Doações</h2>
+        <div class="donations__container">
+          <p class="donations__content mb-4">Contribua para este sonho continuar crescendo</p>
+          <a href="#"><button class="btn btn--uppercase btn--hover-red">Clique aqui</button></a>
+        </div>
+      </div>
+    </div>
+    
+    <picture>
+      <source media="(min-width: 1200px)" srcset="<?php echo get_theme_file_uri('assets/images/elements/kids-large.png'); ?>">
+      <source media="(min-width: 992px)" srcset="<?php echo get_theme_file_uri('assets/images/elements/kids-medium.png'); ?>">
+      <img class="donations__kids" src="<?php echo get_theme_file_uri('assets/images/elements/kids-small.png'); ?>" alt="...">
+    </picture>
 
-    <p>Contribua para este sonho continuar crescendo</p>
-    <button class="btn btn-primary">Clique aqui</button>
-
-    <div class="donations__kids"></div>
+    <!-- <div class="donations__kids"></div> -->
   </div>
 
 </div>
@@ -312,10 +331,6 @@
   <div class="container pt-5 pb-5">
     <h2 class="main-title main-title">Contato</h2>
     <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
-
-
-    
-    
   </div>
 </div>
 

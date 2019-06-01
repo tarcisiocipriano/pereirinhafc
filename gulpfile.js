@@ -105,7 +105,12 @@ function build(done) {
 	done()
 }
 
-exports.clean   = clean
-exports.build   = build
-exports.watch   = watch_files
-exports.default = gulp.series(clean, build, watch_files)
+function imagemin(done) {
+  images()
+}
+
+exports.clean    = clean
+exports.build    = build
+exports.watch    = watch_files
+exports.default  = gulp.series(clean, build, watch_files)
+exports.imagemin = imagemin

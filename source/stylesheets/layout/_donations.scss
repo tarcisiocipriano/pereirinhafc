@@ -1,29 +1,70 @@
 .donations {
-  background-image: url("assets/images/backgrounds/donations.png");
-  background-size: cover;
-  background-position: center;
-  height: 700px;
+  // background-image: url("assets/images/backgrounds/donations.png");
+  // background-size: cover;
+  // background-position: center;
   position: relative;
+  overflow: hidden;
+  position: center;
+
+  &__background {
+    position: absolute;
+    background-position: center;
+  }
+
+  &__title {
+    z-index: -1;
+  }
+
+  @include atMedium {
+    height: 500px;
+  }
+
+  @include atLarge {
+    height: 700px;
+  }
+
+  &__container {
+    text-align: center;
+
+    @include atSmall {
+      text-align: left;
+    }
+  }
+  
+  &__content {
+    font-size: 1rem;
+    color: $grey3;
+
+    @include atSmall {
+      font-size: 1.5rem;
+    }
+  }
 
   &__kids {
-    width: 622px;
-    height: 622px;
-    background-image: url("assets/images/elements/kids.png");
-    background-color: $mainRed;
+    // background-image: url("assets/images/elements/kids.png");
+    // background-size: cover;
+
     position: absolute;
     right: 0;
     bottom: -20px;
-
-    &::before { 
-      content: "";
+    display: none;
+    overflow: visible !important;
+    
+    @include atSmall {
       display: block;
-      margin-left: -200px;
-      width: 200px;
-      height: 622px;
-      border: 200px solid $mainRed;
-      border-top: 620px solid transparent;
-      border-left: 0;
-      border-bottom: 0;
+      // width: 448px;
+      // height: 378px;
     }
+    
+    // @include atMedium {
+    //   width: 600px;
+    //   height: 506px;
+    // }
+    
+    // @include atLarge {
+    //   width: 738px;
+    //   height: 622px;
+    // }
+
   }
 }
