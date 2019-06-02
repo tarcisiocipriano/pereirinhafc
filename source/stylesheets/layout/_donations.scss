@@ -1,9 +1,5 @@
 .donations {
-  // background-image: url("assets/images/backgrounds/donations.png");
-  // background-size: cover;
-  // background-position: center;
   position: relative;
-  position: center;
   
   &__background-container {
     width: 100%;
@@ -12,7 +8,6 @@
     top: 0;
     
     overflow: hidden;
-    background-color: red;
 
     @include atMedium {
       height: 500px;

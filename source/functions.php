@@ -4,7 +4,7 @@
 function theme_styles() {
   wp_enqueue_style('font-awesome', "//use.fontawesome.com/releases/v5.8.2/css/all.css");
   wp_enqueue_style('theme_font', "//fonts.googleapis.com/css?family=Open+Sans");
-  wp_enqueue_style('theme_style', get_stylesheet_uri() );
+  wp_enqueue_style('theme_style', get_theme_file_uri('/stylesheets/main.css'));
   wp_enqueue_style('swiper_style', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" );
   
   wp_enqueue_script('bootstrap_script1', "//code.jquery.com/jquery-3.3.1.slim.min.js");
@@ -22,11 +22,7 @@ function theme_features() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
   add_image_size('newsThumbnail', 350, 197, true);
-  add_image_size('newsCarousel', 1920, 560, true);
 }
 add_action('after_setup_theme', 'theme_features');
-
-// Register the Custom Navigation Walker
-require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 ?>

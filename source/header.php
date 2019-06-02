@@ -8,19 +8,23 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <nav class="navbar fixed-top navbar-expand-md navbar-dark">
-    <div class="container">
-      <h1 class="navbar__logo">
-        <img class="navbar__img" src="<?php echo get_theme_file_uri('assets/images/teams/logo.png'); ?>" alt="PereirinhaFC" class>
-      </h1>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    
+    <div class="container-fluid">
+
+      <div class="navbar__logo-container bg-danger">
+        <h1 class="navbar__logo">
+          <img class="navbar__img" src="<?php echo get_theme_file_uri('assets/images/teams/logo.png'); ?>" alt="PereirinhaFC">
+        </h1>
+      </div>
       
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Jogos <span class="sr-only">(current)</span></a>
           </li>
@@ -41,3 +45,5 @@
       </div>
     </div>
   </nav>
+
+  

@@ -1,67 +1,64 @@
 .swiper-container {
-  height: 300px;
+  height: 360px;
 }
 
 .swiper-slide {
-  height: 100px;
+  // height: 100px;
+  // background-color: red;
   background-size: cover;
   background-position: center;
   position: relative;
 
   &__content {
-    width: 100%;
+    // width: 100%;
     padding: 10px 0;
     color: white;
-    background-color: rgba(255, 0, 0, .3);
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    transition: .2s;
 
     @include atMedium {
-      transform: translateY(50%);
+      // transform: translateY(50%);
     }
   }
 
   &:hover > &__content {
-    transform: translateY(0);
+    // transform: translateY(0);
   }
 
   &__name {
-
+    color: $mainRed;
+    font-weight: bold;
   }
-
+  
   &__job {
-    // margin: 0;
-
+    color: $mainBlue;
   }
 
   &:nth-child(1) {
-    background-image: url("assets/images/profiles/nilda-dias.jpg");
+    // background-image: url("assets/images/profiles/nilda-dias.jpg");
   }
 
   &:nth-child(2) {
-    background-image: url("assets/images/profiles/elias-marques.jpg");
+    // background-image: url("assets/images/profiles/elias-marques.jpg");
   }
 
   &:nth-child(3) {
-    background-image: url("assets/images/profiles/alex-pinheiro.jpg");
+    // background-image: url("assets/images/profiles/alex-pinheiro.jpg");
   }
 
   &:nth-child(4) {
-    background-image: url("assets/images/profiles/raquel-laureano.jpg");
+    // background-image: url("assets/images/profiles/raquel-laureano.jpg");
   }
 
   &:nth-child(5) {
-    background-image: url("assets/images/profiles/fernanda-sa.jpg");
+    // background-image: url("assets/images/profiles/fernanda-sa.jpg");
   }
 
   &:nth-child(6) {
-    background-image: url("assets/images/profiles/romulo-silva.jpg");
+    // background-image: url("assets/images/profiles/romulo-silva.jpg");
   }
 
   &:nth-child(7) {
-    background-image: url("assets/images/profiles/hugo-souto.jpg");
+    // background-image: url("assets/images/profiles/hugo-souto.jpg");
   }
 
 }

@@ -1,27 +1,69 @@
+$navbarHeight: 100px;
+$navbarDetailWidth: 40px;
+
 .navbar {
   z-index: 1;
   transition: .2s;
-  background-color: rgba(28, 35, 52, .5);
+  padding: 0 !important;
+  
+  &__logo-container {
+    display: inline;
+
+    width: 320px;
+    height: $navbarHeight;
+
+    margin-right: $navbarDetailWidth;
+    margin-left: -80px;
+    padding-left: 80px;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      width: $navbarDetailWidth;
+      height: $navbarHeight;
+      
+      border-top: ($navbarHeight/2) solid $mainRed;
+      border-right: ($navbarDetailWidth/2) solid transparent;
+      border-bottom: ($navbarHeight/2) solid transparent;
+      border-left: ($navbarDetailWidth/2) solid $mainRed;
+      
+      position: absolute;
+      top: 0;
+      right: -$navbarDetailWidth;
+    }
+  }
+
+  .nav-item {
+    padding-right: 8px;
+  }
+
+  .nav-link {
+    padding: 4px 24px !important;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $mainBlue !important;
+
+    transition: .2s;
+
+    &:hover, &:focus {
+      color: $white !important;
+      background-color: $mainRed;
+    }
+  }
 
   @include atSmall {
-    height: 80px;
+    height: $navbarHeight;
   }
   
-  &--dark-blue {
-    background-color: #1C2334;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
-    
-    @include atSmall {
-      height: 60px;
-    }
-  }
-
   &__img {
-    position: absolute;
-    top: 10px;
     width: 50px;
-    @include atSmall {
-      width: 80px;
-    }
+    margin-top: 25px;
+    // @include atSmall {
+      // width: 80px;
+    // }
   }
 }

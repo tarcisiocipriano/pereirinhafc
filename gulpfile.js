@@ -45,10 +45,7 @@ function css() {
 		.pipe($.autoprefixer({browsers: ['last 2 versions']}))
 		.pipe($.cssnano())
 		.pipe($.sourcemaps.write('../maps'))
-		.pipe($.rename({
-			basename: 'style'
-		}))
-		.pipe(gulp.dest('./'))
+		.pipe(gulp.dest('./stylesheets'))
 		.pipe(browserSync.stream())
 }
 
@@ -67,6 +64,7 @@ function js() {
 function clean(done) {
 	del('*.php')
   del('*.css')
+  del('stylesheets')
   del('scripts')
   del('assets')
   del('maps')

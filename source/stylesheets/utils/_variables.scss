@@ -3,6 +3,11 @@ $mainRed: #CB1A2B;
 
 $mainBlueDark: #1C2334;
 
+$theme-colors: (
+  "primary": $mainBlue,
+  "danger": $mainRed
+);
+
 $white: #FFFFFF;
 $grey1: #F5F5F5;
 $grey2: #EBEBEB;

@@ -16,3 +16,11 @@ body {
   // }
   // background-color: red !important;
 }
+
+.container-fluid {
+  padding: 0px 16px !important;
+  
+  @include atMedium {
+    padding: 0px 80px !important;
+  }
+}

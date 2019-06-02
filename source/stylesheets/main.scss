@@ -6,6 +6,7 @@ Description: Theme created for a social project at FG
 Version: 1.0
 */
 
+
 @import 'utils/module';
 @import 'base/module';
 @import 'components/module';
@@ -15,33 +16,7 @@ Version: 1.0
 @import 'vendors/module';
 @import 'vendors-extensions/module';
 
-$theme-colors: (
-  // "primary": #0074d9,
-  // "danger": #ff4136
-);
-
 
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.btn {
-  border: 1px solid $white;
-  color: $white;
-
-  &--center {
-    text-align: center;
-  }
-
-  &--uppercase {
-    text-transform: uppercase;
-  }
-
-  &--hover-red {
-    &:hover, &:focus {
-      background-color: $mainRed;
-      border: 1px solid $mainRed;
-      color: $white;
-    }
-  }
-
-}

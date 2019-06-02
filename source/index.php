@@ -147,7 +147,7 @@
   <div class="container">
     <h2 class="main-title">Notícias</h2>
   
-    <div class="row">
+    <div class="row mb-5">
 
       <?php
         // $newsPosts = new WP_Query(array(
@@ -157,30 +157,42 @@
         while(have_posts()) {
           the_post(); ?>
           <div class="col-lg-4 news--mb">
-            <a href="#" class="card w100">
-              <div class="card-img-container">
-                <div class="card-img-overlay"></div>
-                <?php the_post_thumbnail('newsThumbnail', array('class' => 'card-img')); ?>
-                <!-- <img class="card-img-top" src="<?php the_post_thumbnail_url('newsThumbnails'); ?>" alt="news photo"> -->
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><?php the_title(); ?></h5>
-                <p class="card-text">
-                  <?php if(has_excerpt()) {
-                    echo get_the_excerpt();
-                  } else {
-                    echo wp_trim_words(get_the_content(), 18);
-                  }
-                  ?>
-                </p>
-              </div>
-            </a>
+            <div href="#" class="card w-100">
+
+              <a class="news--link" href="">
+
+                <div class="card-img-container">
+                  <div class="card-img-overlay"></div>
+                  <img class="card-img-top" src="<?php the_post_thumbnail_url('newsThumbnail'); ?>" alt="news photo">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><?php the_title(); ?></h5>
+                  <p class="card-text">
+                    <?php if(has_excerpt()) {
+                      echo get_the_excerpt();
+                    } else {
+                      echo wp_trim_words(get_the_content(), 18);
+                    }
+                    ?>
+                  </p>
+                </div>
+
+              </a>
+              
+            </div>
           </div>
         <?php }
       ?>
 
 
     </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <a class="d-block text-center" href="#"><button class="btn btn--uppercase btn--hover-red">Veja mais</button></a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -208,49 +220,73 @@
       </div>
     </div> <!-- content -->
 
+    <hr>
+
+    <!-- winnings -->
+    <div class="winnings">
+      <h3 class="text-center">Títulos Conquistados</h3>
+
+      <div class="winnings__group">
+        <h4 class="text-center">2018</h4>
+        
+        <div class="winnings__card">
+
+        </div>
+      </div>
+      
+    </div>
+
     <!-- swiper -->
     <div class="row mt-5">
       <div class="col-md-12">
+        <h3 class="text-center mb-4">Equipe</h3>
         <!-- Swiper -->
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Nilda Dias</h4>
                 <p class="swiper-slide__job">Coordenadora</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/elias-marques.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Elias Marques</h4>
                 <p class="swiper-slide__job">Técnico</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/alex-pinheiro.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Alex Pinheiro</h4>
                 <p class="swiper-slide__job">Preparador físico</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/raquel-laureano.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Raquel Laureano</h4>
                 <p class="swiper-slide__job">Captação de recursos</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/fernanda-sa.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Fernanda Sá</h4>
                 <p class="swiper-slide__job">Captação de recursos</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/romulo-silva.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Romulo Silva</h4>
                 <p class="swiper-slide__job">Contador</p>
               </div>
             </div>
             <div class="swiper-slide">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/hugo-souto.jpg"); ?>" alt="...">
               <div class="swiper-slide__content">
                 <h4 class="swiper-slide__name">Hugo Souto</h4>
                 <p class="swiper-slide__job">Advogado</p>
