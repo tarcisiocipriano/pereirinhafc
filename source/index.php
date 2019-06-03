@@ -71,73 +71,76 @@
 <!-- Jogos -->
 <div class="games" id="jogos">
   <div class="container">
-    <h2 class="main-title">Jogos</h2>
-    <div class="row games__container">
-  
-    <!-- Query -->
-    <?php
-      $today = date('Ymd');
-      $gamePosts = new WP_Query(array(
-        'posts_per_page' => 3,
-        'post_type' => 'game',
-        'meta_key' => 'data_do_jogo',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
-        'meta_query' => array(
-          array(
-            'key' => 'data_do_jogo',
-            'compare' => '>=',
-            'value' => $today,
-            'type' => 'DATE'
-          )
-        )
-      ));
-    ?>
-
-    <!-- LOOP First Game -->
-    <div class="col-lg-7">
-      <?php 
-        $gamesCount = 1;
-        while($gamePosts->have_posts()) {
-          $gamePosts->the_post();
-          if($gamesCount == 1) { ?>
-            <div class="games__component games__component--blue">
-              <div class="games__date"><?php
-                $gameDate = new DateTime(get_field('data_do_jogo'));
-                echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
-              </div> <!-- /games__date -->
-              <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-              <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-              <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
-            </div> <!-- /games__component -->
-          <?php $gamesCount++; }
-        }
-      ?>
-    </div> <!-- /col -->
-
-    <!-- LOOP After First Game -->
-    <div class="col-lg-5 col--after-first">
+    <div class="vertical-padding">
+      <h2 class="main-title">Jogos</h2>
+      <div class="row games__container">
+    
+      <!-- Query -->
       <?php
-        while($gamePosts->have_posts()) {
-          $gamePosts->the_post();
-          
-          if($gamesCount > 2) { ?>
-            <div class="games__component games__component--after-first">
-              <div class="games__date games__date--after-first"><?php
-                $gameDate = new DateTime(get_field('data_do_jogo'));
-                echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
-              </div> <!-- /games__date -->
-              <img class="games__team games__team--left games__team--after-first" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-              <img class="games__team games__team--right games__team--after-first" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-              <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
-            </div> <!-- /games__component -->
-          <?php   }
-          $gamesCount++;
-        }
+        $today = date('Ymd');
+        $gamePosts = new WP_Query(array(
+          'posts_per_page' => 3,
+          'post_type' => 'game',
+          'meta_key' => 'data_do_jogo',
+          'orderby' => 'meta_value',
+          'order' => 'ASC',
+          'meta_query' => array(
+            array(
+              'key' => 'data_do_jogo',
+              'compare' => '>=',
+              'value' => $today,
+              'type' => 'DATE'
+            )
+          )
+        ));
       ?>
-    </div> <!-- /col -->
+  
+      <!-- LOOP First Game -->
+      <div class="col-lg-7">
+        <?php 
+          $gamesCount = 1;
+          while($gamePosts->have_posts()) {
+            $gamePosts->the_post();
+            if($gamesCount == 1) { ?>
+              <div class="games__component games__component--blue">
+                <div class="games__date"><?php
+                  $gameDate = new DateTime(get_field('data_do_jogo'));
+                  echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
+                </div> <!-- /games__date -->
+                <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+                <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+                <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
+              </div> <!-- /games__component -->
+            <?php $gamesCount++; }
+          }
+        ?>
+      </div> <!-- /col -->
+  
+      <!-- LOOP After First Game -->
+      <div class="col-lg-5 col--after-first">
+        <?php
+          while($gamePosts->have_posts()) {
+            $gamePosts->the_post();
+            
+            if($gamesCount > 2) { ?>
+              <div class="games__component games__component--after-first">
+                <div class="games__date games__date--after-first"><?php
+                  $gameDate = new DateTime(get_field('data_do_jogo'));
+                  echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
+                </div> <!-- /games__date -->
+                <img class="games__team games__team--left games__team--after-first" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+                <img class="games__team games__team--right games__team--after-first" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+                <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
+              </div> <!-- /games__component -->
+            <?php   }
+            $gamesCount++;
+          }
+        ?>
+      </div> <!-- /col -->
+  
+      </div> <!-- /row -->
 
-    </div> <!-- /row -->
+    </div> <!-- /vertical-padding -->
   </div> <!-- /container -->
 </div> <!-- /games -->
 
@@ -145,9 +148,11 @@
 <div class="news" id="noticias">
 
   <div class="container">
-    <h2 class="main-title">Notícias</h2>
-  
-    <div class="row mb-5">
+    <div class="vertical-padding">
+
+      <h2 class="main-title main-title--blue main-title--margin-bottom text-center">Notícias</h2>
+    
+    <div class="row card-container">
 
       <?php
         // $newsPosts = new WP_Query(array(
@@ -156,149 +161,151 @@
 
         while(have_posts()) {
           the_post(); ?>
-          <div class="col-lg-4 news--mb">
-            <div href="#" class="card w-100">
+          <div class="col-md-4">
 
-              <a class="news--link" href="">
+            <a class="card card--margin-bottom" href="">
 
-                <div class="card-img-container">
-                  <div class="card-img-overlay"></div>
-                  <img class="card-img-top" src="<?php the_post_thumbnail_url('newsThumbnail'); ?>" alt="news photo">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><?php the_title(); ?></h5>
-                  <p class="card-text">
-                    <?php if(has_excerpt()) {
-                      echo get_the_excerpt();
-                    } else {
-                      echo wp_trim_words(get_the_content(), 18);
-                    }
-                    ?>
-                  </p>
-                </div>
+              <div class="card-img-container">
+                <div class="card-img-overlay"></div>
+                <img class="card-img-top" src="<?php the_post_thumbnail_url('newsThumbnail'); ?>" alt="news photo">
+              </div>
 
-              </a>
+              <div class="card-body">
+                <h6 class="card-subtitle text-center">12 de Junho de 2019</h6>
+                <h5 class="card-title text-center"><?php the_title(); ?></h5>
+                <!-- <p class="card-text">
+                  <?php if(has_excerpt()) {
+                    echo get_the_excerpt();
+                  } else {
+                    echo wp_trim_words(get_the_content(), 18);
+                  }
+                  ?>
+                </p> -->
+              </div>
+
+            </a>
               
-            </div>
           </div>
         <?php }
       ?>
-
 
     </div>
 
     <div class="row">
       <div class="col-sm-12">
-        <a class="d-block text-center" href="#"><button class="btn btn--uppercase btn--hover-red">Veja mais</button></a>
+        <a class="d-block text-center" href="#"><button class="btn btn--red">Veja mais</button></a>
       </div>
     </div>
+    
+    </div> <!-- /vertical-padding -->
+  </div> <!-- /container -->
+</div> <!-- /noticias -->
 
-  </div>
-</div>
 
-<!-- Quem Somos -->
-<div class="about" id="quem-somos">
+<div class="about bg-success" id="quem-somos">
   <div class="container">
-    <h2 class="main-title main-title--blue">Quem Somos</h2>
-
-    <div class="row">
-      <div class="col-md-6">
-        <p>O projeto é desenvolvido no Alto do Pereirinha, Bairro de Água Fria, Zona norte do Recife-PE.</p>
-        <p>Atendemos anualmente 150 alunos dos 5 aos 17 anos, moradores do bairro de Água Fria e outras 12 comunidades próximas.</p>
-        <h3>Missão</h3>
-        <p>Usar o futebol como ferramenta de inclusão social, educação e cidadania.</p>
-        <h3>Visão</h3>
-        <p>Ser referência no trabalho com crianças e adolescentes por meio das praticas e ações que valorizem a transformação social.</p>
-        <h3>Valores</h3>
-        <p>Responsabilidade social, ética, respeito e transparência.</p>
-      </div>
-
-      <div class="col-md-6">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7n3PfR_NE7c"></iframe>
+    <div class="vertical-padding">
+      <h2 class="main-title main-title--blue">Quem Somos</h2>
+  
+      <div class="row">
+        <div class="col-md-6">
+          <p>O projeto é desenvolvido no Alto do Pereirinha, Bairro de Água Fria, Zona norte do Recife-PE.</p>
+          <p>Atendemos anualmente 150 alunos dos 5 aos 17 anos, moradores do bairro de Água Fria e outras 12 comunidades próximas.</p>
+          <h3>Missão</h3>
+          <p>Usar o futebol como ferramenta de inclusão social, educação e cidadania.</p>
+          <h3>Visão</h3>
+          <p>Ser referência no trabalho com crianças e adolescentes por meio das praticas e ações que valorizem a transformação social.</p>
+          <h3>Valores</h3>
+          <p>Responsabilidade social, ética, respeito e transparência.</p>
         </div>
-      </div>
-    </div> <!-- content -->
-
-    <hr>
-
-    <!-- winnings -->
-    <div class="winnings">
-      <h3 class="text-center">Títulos Conquistados</h3>
-
-      <div class="winnings__group">
-        <h4 class="text-center">2018</h4>
-        
-        <div class="winnings__card">
-
+  
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7n3PfR_NE7c"></iframe>
+          </div>
         </div>
-      </div>
-      
-    </div>
-
-    <!-- swiper -->
-    <div class="row mt-5">
-      <div class="col-md-12">
-        <h3 class="text-center mb-4">Equipe</h3>
-
-        <div class="about__slick">
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Nilda Dias</h4>
-              <p class="about__slick__job">Coordenadora</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/elias-marques.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Elias Marques</h4>
-              <p class="about__slick__job">Técnico</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/alex-pinheiro.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Alex Pinheiro</h4>
-              <p class="about__slick__job">Preparador físico</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/raquel-laureano.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Raquel Laureano</h4>
-              <p class="about__slick__job">Captação de recursos</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/fernanda-sa.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Fernanda Sá</h4>
-              <p class="about__slick__job">Captação de recursos</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/romulo-silva.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Romulo Silva</h4>
-              <p class="about__slick__job">Contador</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/hugo-souto.jpg"); ?>" alt="...">
-            <div class="about__slick__content">
-              <h4 class="about__slick__name">Hugo Souto</h4>
-              <p class="about__slick__job">Advogado</p>
-            </div>
-          </div>
+      </div> <!-- content -->
+  
+      <hr>
+  
+      <!-- winnings -->
+      <div class="winnings">
+        <h3 class="text-center">Títulos Conquistados</h3>
+  
+        <div class="winnings__group">
+          <h4 class="text-center">2018</h4>
           
+          <div class="winnings__card">
+  
+          </div>
         </div>
+        
+      </div>
+  
+      <!-- swiper -->
+      <div class="row mt-5">
+        <div class="col-md-12">
+          <h3 class="text-center mb-4">Equipe</h3>
+  
+          <div class="about__slick">
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Nilda Dias</h4>
+                <p class="about__slick__job">Coordenadora</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/elias-marques.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Elias Marques</h4>
+                <p class="about__slick__job">Técnico</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/alex-pinheiro.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Alex Pinheiro</h4>
+                <p class="about__slick__job">Preparador físico</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/raquel-laureano.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Raquel Laureano</h4>
+                <p class="about__slick__job">Captação de recursos</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/fernanda-sa.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Fernanda Sá</h4>
+                <p class="about__slick__job">Captação de recursos</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/romulo-silva.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Romulo Silva</h4>
+                <p class="about__slick__job">Contador</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/hugo-souto.jpg"); ?>" alt="...">
+              <div class="about__slick__content">
+                <h4 class="about__slick__name">Hugo Souto</h4>
+                <p class="about__slick__job">Advogado</p>
+              </div>
+            </div>
+            
+          </div>
+  
+        </div> <!-- swiper -->
+      </div>
+      <!-- row-swiper -->
 
-      </div> <!-- swiper -->
-    </div>
-    <!-- row-swiper -->
-
-  </div> <!-- container -->
+    </div> <!-- /vertical-padding -->
+  </div> <!-- /container -->
 </div> <!-- /about -->
 
 <!-- Doacoes -->

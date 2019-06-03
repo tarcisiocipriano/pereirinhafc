@@ -1,0 +1,83 @@
+.card {
+  border: none;
+  border-radius: 0;
+  
+  &:hover {
+    text-decoration: none;
+  }
+
+  &-container {
+    margin-bottom: 0;
+    
+    @include atSmall {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--margin-bottom {
+    margin-bottom: 20px;
+
+    @include atSmall {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ------ content ------ */
+  &-body {
+    padding: 0;
+  }
+
+  &-title {
+    margin: 0 0 20px 0;
+
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $mainBlue;
+
+    @include atSmall {
+
+    }
+  }
+
+  &-subtitle {
+    margin: 0 0 10px 0;
+
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $mainGrey;
+
+    @include atSmall {
+      
+    }
+  }
+
+  /* ------ image ------ */
+  &-img-container {
+    position: relative;
+    margin-bottom: 20px;
+
+    @include atSmallest {
+      margin-bottom: 40px;
+    }
+  }
+  
+  &-img-overlay {
+    background-color: $mainRed;
+    opacity: 0;
+    
+    transition: .2s;
+
+    position: absolute;
+  }
+
+  &:hover {
+    .card-img-overlay {
+      opacity: .8;
+    }
+  }
+
+  &-img-top {
+    border-radius: 0;
+  }
+
+}

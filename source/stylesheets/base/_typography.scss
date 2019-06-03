@@ -12,26 +12,30 @@ body {
 }
 
 .main-title {
-  font-family: "sketch";
-  font-size: 4rem;
-  color: white;
   margin: 0;
 
-  &--dark {
-    color: black;
+  font-family: "sketch";
+  font-size: 2.5rem;
+  color: $white;
+
+  @include atMedium {
+    font-size: 3.75rem;
+  }
+
+  &--margin-bottom {
+    margin-bottom: 20px;
+    
+    @include atMedium {
+      margin-bottom: 40px;
+    }
   }
 
   &--blue {
-    color: $mainBlueDark;
+    color: $mainBlue;
   }
 
   &--red {
     color: $mainRed;
   }
   
-  @include atSmall {
-    font-size: 6rem;
-  }
-
-
 }

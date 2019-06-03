@@ -1,20 +1,21 @@
 .btn {
   border: 2px solid $white;
+  border-radius: 0;
+  
   color: $white;
-
-  &--center {
-    text-align: center;
-  }
+  font-weight: 600;
 
   &--uppercase {
     text-transform: uppercase;
   }
 
-  &--hover-red {
-    &:hover, &:focus {
-      background-color: $mainRed;
-      border-color: $mainRed;
+  &--red {
+    color: $mainRed;
+    border-color: $mainRed;
+    
+    &:hover {
       color: $white;
+      background-color: $mainRed;
     }
   }
 

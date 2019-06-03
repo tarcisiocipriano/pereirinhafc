@@ -1,3 +1,7 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
 @import 'utils/module';
 @import 'base/module';
 @import 'components/module';
@@ -6,7 +10,3 @@
 @import 'themes/module';
 @import 'vendors/module';
 @import 'vendors-extensions/module';
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
