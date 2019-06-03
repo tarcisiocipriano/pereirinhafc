@@ -1,7 +1,7 @@
 .card {
   border: none;
   border-radius: 0;
-  
+
   &:hover {
     text-decoration: none;
   }
@@ -10,7 +10,7 @@
     margin-bottom: 0;
     
     @include atSmall {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
 

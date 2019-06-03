@@ -1,6 +1,13 @@
 .btn {
   border: 2px solid $white;
   border-radius: 0;
+  padding: 10px 32px;
+  
+  &:focus, &:hover {
+    box-shadow: none;
+  }
+
+  font-size: 1.125rem;
   
   color: $white;
   font-weight: 600;
@@ -13,7 +20,7 @@
     color: $mainRed;
     border-color: $mainRed;
     
-    &:hover {
+    &:focus, &:hover {
       color: $white;
       background-color: $mainRed;
     }

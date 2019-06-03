@@ -192,8 +192,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <a class="d-block text-center" href="#"><button class="btn btn--red">Veja mais</button></a>
+      <div class="col-sm-12 text-center">
+        <a href="#"><button class="btn btn--uppercase btn--red">Veja mais</button></a>
       </div>
     </div>
     
