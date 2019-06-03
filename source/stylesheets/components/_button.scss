@@ -1,0 +1,21 @@
+.btn {
+  border: 2px solid $white;
+  color: $white;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--hover-red {
+    &:hover, &:focus {
+      background-color: $mainRed;
+      border-color: $mainRed;
+      color: $white;
+    }
+  }
+
+}

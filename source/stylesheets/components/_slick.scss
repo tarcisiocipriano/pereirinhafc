@@ -1,0 +1,21 @@
+.about__slick {
+  div {
+    outline: none;
+  }
+
+  &__content {
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+  }
+
+  &__name {
+    color: $mainRed;
+    font-weight: bold;
+  }
+  
+  &__job {
+    color: $mainBlue;
+  }
+
+}
