@@ -32,6 +32,6 @@
     "jquery-smooth-scroll": "^2.2.0",
     "npm": "^6.9.0",
     "popper.js": "^1.15.0",
-    "swiper": "^4.5.0"
+    "slick-carousel": "^1.8.1"
   }
 }

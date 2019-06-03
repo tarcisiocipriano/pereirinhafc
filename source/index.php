@@ -240,84 +240,60 @@
     <div class="row mt-5">
       <div class="col-md-12">
         <h3 class="text-center mb-4">Equipe</h3>
-        <!-- Swiper -->
-        <!-- <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Nilda Dias</h4>
-                <p class="swiper-slide__job">Coordenadora</p>
-              </div>
+
+        <div class="about__slick">
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Nilda Dias</h4>
+              <p class="about__slick__job">Coordenadora</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/elias-marques.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Elias Marques</h4>
-                <p class="swiper-slide__job">Técnico</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/elias-marques.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Elias Marques</h4>
+              <p class="about__slick__job">Técnico</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/alex-pinheiro.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Alex Pinheiro</h4>
-                <p class="swiper-slide__job">Preparador físico</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/alex-pinheiro.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Alex Pinheiro</h4>
+              <p class="about__slick__job">Preparador físico</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/raquel-laureano.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Raquel Laureano</h4>
-                <p class="swiper-slide__job">Captação de recursos</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/raquel-laureano.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Raquel Laureano</h4>
+              <p class="about__slick__job">Captação de recursos</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/fernanda-sa.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Fernanda Sá</h4>
-                <p class="swiper-slide__job">Captação de recursos</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/fernanda-sa.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Fernanda Sá</h4>
+              <p class="about__slick__job">Captação de recursos</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/romulo-silva.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Romulo Silva</h4>
-                <p class="swiper-slide__job">Contador</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/romulo-silva.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Romulo Silva</h4>
+              <p class="about__slick__job">Contador</p>
             </div>
-            <div class="swiper-slide">
-              <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/hugo-souto.jpg"); ?>" alt="...">
-              <div class="swiper-slide__content">
-                <h4 class="swiper-slide__name">Hugo Souto</h4>
-                <p class="swiper-slide__job">Advogado</p>
-              </div>
+          </div>
+          <div class="col-md-3">
+            <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/hugo-souto.jpg"); ?>" alt="...">
+            <div class="about__slick__content">
+              <h4 class="about__slick__name">Hugo Souto</h4>
+              <p class="about__slick__job">Advogado</p>
             </div>
-          </div> -->
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
+          </div>
+          
         </div>
 
-        <!-- Swiper JS -->
-        <script src="../dist/js/swiper.min.js"></script>
-
-        <!-- Initialize Swiper -->
-        <script>
-          if ($(window).width() < 768) {
-            var sliderPerView = 1;
-          }
-          else {
-            var sliderPerView = 4;
-          }
-          
-          var swiper = new Swiper('.swiper-container', {
-            slidesPerView: sliderPerView,
-            spaceBetween: 30,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-          });
-        </script>
       </div> <!-- swiper -->
     </div>
     <!-- row-swiper -->
@@ -369,10 +345,11 @@
 <!-- Contato -->
 <div class="contact text-primary" id="contato">
   <div class="container">
-    <h2 class="main-title main-title">Contato</h2>
-    <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+    <h2 class="main-title">Contato</h2>
+    <div class="form-group">
+      <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+    </div>
   </div>
 </div>
-
 
 <?php get_footer(); ?>
