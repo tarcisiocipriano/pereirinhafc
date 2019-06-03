@@ -20,6 +20,9 @@
     </div>
   </div>
 
+  <script src="<?php echo get_theme_file_uri('scripts/vendors.js'); ?>"></script>
+  <script src="<?php echo get_theme_file_uri('scripts/main.js'); ?>"></script>
+
   <?php wp_footer(); ?>
 </body>
 </html>

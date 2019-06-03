@@ -49,8 +49,22 @@ function css() {
 		.pipe(browserSync.stream())
 }
 
+function Vendors() {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/jquery-smooth-scroll/src/jquery.smooth-scroll.js',
+    'node_modules/popper.js/dist/umd/popper.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js'
+  ])
+    .pipe($.sourcemaps.init({ loadMaps: true }))
+    .pipe($.concat('vendors.js'))
+    .pipe($.uglify())
+    .pipe($.sourcemaps.write('../maps'))
+    .pipe(gulp.dest('./scripts'))
+}
+
 function js() {
-	return gulp.src('source/scripts/main.js')
+  return gulp.src('source/scripts/main.js')
 		.pipe($.sourcemaps.init({ loadMaps: true }))
 		.pipe($.concat('main.js'))
 		.pipe($.jshint())
@@ -66,8 +80,9 @@ function clean(done) {
   del('*.css')
   del('stylesheets')
   del('scripts')
-  del('assets')
   del('maps')
+  del('assets/files')
+  del('assets/fonts')
 	done()
 }
 
@@ -95,20 +110,27 @@ function build(done) {
 	data()
 	files()
 	fonts()
-	images()
 	movies()
 	php()
 	css()
-	js()
+  js()
+  Vendors()
 	done()
+}
+
+function imageclean(done) {
+  del('assets/images')
+  done()
 }
 
 function imagemin(done) {
   images()
+  done()
 }
 
-exports.clean    = clean
-exports.build    = build
-exports.watch    = watch_files
-exports.default  = gulp.series(clean, build, watch_files)
-exports.imagemin = imagemin
+exports.clean      = clean
+exports.build      = build
+exports.watch      = watch_files
+exports.default    = gulp.series(clean, build, watch_files)
+exports.imagemin   = imagemin
+exports.imageclean = imageclean

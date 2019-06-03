@@ -69,7 +69,7 @@
 </div>
 
 <!-- Jogos -->
-<div class="games pt-5">
+<div class="games" id="jogos">
   <div class="container">
     <h2 class="main-title">Jogos</h2>
     <div class="row games__container">
@@ -142,7 +142,7 @@
 </div> <!-- /games -->
 
 <!-- Noticias -->
-<div class="news pt-5 pb-5">
+<div class="news" id="noticias">
 
   <div class="container">
     <h2 class="main-title">Notícias</h2>
@@ -197,7 +197,7 @@
 </div>
 
 <!-- Quem Somos -->
-<div class="about pt-5 pb-5">
+<div class="about" id="quem-somos">
   <div class="container">
     <h2 class="main-title main-title--blue">Quem Somos</h2>
 
@@ -241,7 +241,7 @@
       <div class="col-md-12">
         <h3 class="text-center mb-4">Equipe</h3>
         <!-- Swiper -->
-        <div class="swiper-container">
+        <!-- <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img class="w-100" src="<?php echo get_theme_file_uri("assets/images/profiles/nilda-dias.jpg"); ?>" alt="...">
@@ -292,7 +292,7 @@
                 <p class="swiper-slide__job">Advogado</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
         </div>
@@ -319,13 +319,14 @@
           });
         </script>
       </div> <!-- swiper -->
-    </div> <!-- row-swiper -->
+    </div>
+    <!-- row-swiper -->
 
   </div> <!-- container -->
 </div> <!-- /about -->
 
 <!-- Doacoes -->
-<div class="donations pt-5 pb-5">
+<div class="donations" id="doacoes">
 
   <div class="donations__background-container">
     <img class="donations__background"
@@ -366,8 +367,8 @@
 </div>
 
 <!-- Contato -->
-<div class="contact text-primary">
-  <div class="container pt-5 pb-5">
+<div class="contact text-primary" id="contato">
+  <div class="container">
     <h2 class="main-title main-title">Contato</h2>
     <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
   </div>

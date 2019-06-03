@@ -9,17 +9,16 @@ textarea {
 }
 
 body {
-  // padding-top: 56px;
+  padding-top: 64px;
   
-  // @include atSmall {
-  //   padding-top: 100px;
-  // }
-  // background-color: red !important;
+  @include atSmall {
+    padding-top: 100px;
+  }
 }
 
 .container-fluid {
   padding: 0px 16px !important;
-  
+
   @include atMedium {
     padding: 0px 80px !important;
   }
