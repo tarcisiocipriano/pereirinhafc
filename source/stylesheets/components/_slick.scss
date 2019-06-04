@@ -1,21 +1,74 @@
 .about__slick {
+  margin: 0 !important;
+  position: relative;
+
   div {
     outline: none;
   }
 
   &__content {
-    padding: 10px 0;
+    padding: 24px 0;
     color: white;
     text-align: center;
   }
 
   &__name {
-    color: $mainRed;
-    font-weight: bold;
+    color: $mainBlue;
+    font-weight: 600;
   }
   
   &__job {
-    color: $mainBlue;
+    margin: 0;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $mainGrey;
   }
 
+  /* ------ dots ------ */
+  .slick-dots {
+    display: block;
+    justify-content: center;
+    
+    margin: 0;
+    padding: 0;
+
+    // bottom: -20px;
+
+    // @include atSmall {
+    //   bottom: -40px;
+    // }
+    
+    list-style-type: none;
+    
+      li {
+        width: 8px;
+        height: 8px;
+        margin: 0 16px;
+      }
+    
+      button {
+        display: block;
+        
+        width: 8px;
+        height: 8px;
+        margin: 5px;
+        
+        border: none;
+        background-color: $mainGrey;
+        
+        text-indent: -9999px;
+
+        &::before {
+          // width: 0;
+          // height: 0;
+        }
+      }
+    
+      li.slick-active button {
+        background-color: $mainBlue;
+      }
+    
+  }
 }
+

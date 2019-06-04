@@ -48,13 +48,13 @@
         </ul>
 
         <ul class="navbar-nav navbar-nav--social ml-auto">
-          <li class="nav-item nav-item--social">
+          <li class="nav-item--social">
             <a class="nav-link--social" target="_blank" href="https://www.facebook.com/PereirinhaFC/"><i class="fab fa-facebook-f"></i></a>
           </li>
-          <li class="nav-item nav-item--social">
+          <li class="nav-item--social">
             <a class="nav-link--social" target="_blank" href="https://www.instagram.com/pereirinhafc/"><i class="fab fa-instagram"></i></a>
           </li>
-          <li class="nav-item nav-item--social">
+          <li class="nav-item--social">
             <a class="nav-link--social" target="_blank" href="https://www.youtube.com/user/escolinhapfc/videos/"><i class="fab fa-youtube"></i></a>
           </li>
         </ul>

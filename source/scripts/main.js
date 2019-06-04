@@ -37,7 +37,7 @@ $(document).ready( function() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         }
       }
       // You can unslick at a given breakpoint now by adding:

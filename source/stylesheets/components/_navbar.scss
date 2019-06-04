@@ -3,6 +3,7 @@ $navbarHeightLarge: 100px;
 $navbarTriangle: 40px;
 
 .navbar {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
 
   &-bg {
     background-color: $mainBlue;
@@ -22,10 +23,9 @@ $navbarTriangle: 40px;
   
   /* ----------- logo -----------*/
   &__logo-container {
-    // display: inline;
-
-    width: 100px;
+    width: 150px;
     height: $navbarHeightSmall;
+    background-color: $mainRed;
 
     margin-right: $navbarTriangle;
     margin-left: -80px;
@@ -34,25 +34,40 @@ $navbarTriangle: 40px;
     position: relative;
 
     @include atSmall {
-      width: 300px;
+      width: 200px;
       height: $navbarHeightLarge;
-      background-color: $mainRed;
+    }
 
-      /* ----------- triangle -----------*/
-      &::after {
-        content: "";
-        width: $navbarTriangle;
+    @include atMedium {
+      width: 140px;
+    }
+
+    @include atLarge {
+      width: 230px;
+    }
+
+    /* ----------- triangle -----------*/
+    &::after {
+      content: "";
+      width: $navbarTriangle;
+      height: $navbarHeightSmall;
+
+      border-top: ($navbarHeightSmall/2) solid $mainRed;
+      border-right: ($navbarTriangle/2) solid transparent;
+      border-bottom: ($navbarHeightSmall/2) solid transparent;
+      border-left: ($navbarTriangle/2) solid $mainRed;
+      
+      @include atSmall {
         height: $navbarHeightLarge;
-        
         border-top: ($navbarHeightLarge/2) solid $mainRed;
         border-right: ($navbarTriangle/2) solid transparent;
         border-bottom: ($navbarHeightLarge/2) solid transparent;
         border-left: ($navbarTriangle/2) solid $mainRed;
-        
-        position: absolute;
-        top: 0;
-        right: -$navbarTriangle;
       }
+      
+      position: absolute;
+      top: 0;
+      right: -$navbarTriangle;
     }
   }
 
@@ -62,6 +77,7 @@ $navbarTriangle: 40px;
   }
 
   /* ----------- menu -----------*/
+  // item
   .nav-item {
     // menu
     @include atMedium {
@@ -76,6 +92,7 @@ $navbarTriangle: 40px;
     }
   }
 
+  // links
   // menu
   .nav-link {
     margin: 0 -16px;
@@ -88,8 +105,14 @@ $navbarTriangle: 40px;
     color: $white;
     
     transition: .2s;
-    
+
     @include atMedium {
+      margin: 0;
+      padding: 4px 16px !important;
+      color: $mainBlue;
+    }
+    
+    @include atLarge {
       margin: 0;
       padding: 4px 24px !important;
       color: $mainBlue;
@@ -116,7 +139,15 @@ $navbarTriangle: 40px;
       }
 
       @include atMedium {
-        
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+      }
+
+      @include atLarge {
+        width: 52px;
+        height: 52px;
+        padding: 15px;
       }
     }
 

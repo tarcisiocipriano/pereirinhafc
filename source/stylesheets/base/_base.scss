@@ -17,17 +17,31 @@ body {
 }
 
 .container-fluid {
-  padding: 0px 16px !important;
-
+  padding: 0 16px !important;
+  
   @include atMedium {
-    padding: 0px 80px !important;
+    padding: 0 80px !important;
   }
+
+}
+
+.no-padding-at-small {
+  padding: 0 !important;
+  
+  @include atSmall {
+    padding: 0 16px !important;
+  }
+  
 }
 
 .vertical-padding {
   padding: 30px 0;
   
   @include atMedium {
+    padding: 60px 0;
+  }
+
+  @include atLarge {
     padding: 120px 0;
   }
 }
