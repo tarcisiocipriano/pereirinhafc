@@ -21,6 +21,12 @@ $desktop-width: 1024px;
   }
 }
 
+@mixin onlySmall {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin atSmall {
   @media (min-width: 768px) {
     @content;

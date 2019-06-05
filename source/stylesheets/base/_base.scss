@@ -25,15 +25,6 @@ body {
 
 }
 
-.no-padding-at-small {
-  padding: 0 !important;
-  
-  @include atSmall {
-    padding: 0 16px !important;
-  }
-  
-}
-
 .vertical-padding {
   padding: 30px 0;
   

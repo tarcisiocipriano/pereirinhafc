@@ -203,7 +203,7 @@
 
 <!-- Quem Somos -->
 <div class="about" id="quem-somos">
-  <div class="container-fluid no-padding-at-small">
+  <div class="container-fluid">
 
     <div class="vertical-padding">
 
@@ -213,34 +213,36 @@
         <div class="about__kids-pic"></div>
       </div>
 
-      <!-- Content -->
-      <div class="col-lg-8 offset-lg-4 col-sm-12 offset-sm-0">
-
-        <h2 class="main-title main-title--blue main-title--margin-bottom">Quem Somos</h2>
-
-        <div class="about__info">
-          <h3 class="about__title">Missão</h3>
-          <p class="about__text">Usar o futebol como ferramenta de inclusão social, educação e cidadania.</p>
-        </div>
-
-        <div class="about__info">
-          <h3 class="about__title">Visão</h3>
-          <p class="about__text">Ser referência no trabalho com crianças e adolescentes por meio das praticas e ações que valorizem a transformação social.</p>
-        </div>
-
-        <div class="about__info">
-          <h3 class="about__title">Valores</h3>
-          <p class="about__text">Responsabilidade social, ética, respeito e transparência.</p>
-        </div>
+      <div class="row">
+        <!-- Content -->
+        <div class="col-lg-8 offset-lg-4 col-sm-12">
+  
+          <h2 class="main-title main-title--blue main-title--margin-bottom">Quem Somos</h2>
+  
+          <div class="about__info">
+            <h3 class="about__title">Missão</h3>
+            <p class="about__text">Usar o futebol como ferramenta de inclusão social, educação e cidadania.</p>
+          </div>
+  
+          <div class="about__info">
+            <h3 class="about__title">Visão</h3>
+            <p class="about__text">Ser referência no trabalho com crianças e adolescentes por meio das praticas e ações que valorizem a transformação social.</p>
+          </div>
+  
+          <div class="about__info">
+            <h3 class="about__title">Valores</h3>
+            <p class="about__text">Responsabilidade social, ética, respeito e transparência.</p>
+          </div>
+          
+          
+          <p>O projeto é desenvolvido no Alto do Pereirinha, Bairro de Água Fria, Zona norte do Recife-PE.</p>
+          <p>Atendemos anualmente 150 alunos dos 5 aos 17 anos, moradores do bairro de Água Fria e outras 12 comunidades próximas.</p>
         
-        
-        <p>O projeto é desenvolvido no Alto do Pereirinha, Bairro de Água Fria, Zona norte do Recife-PE.</p>
-        <p>Atendemos anualmente 150 alunos dos 5 aos 17 anos, moradores do bairro de Água Fria e outras 12 comunidades próximas.</p>
-      
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7n3PfR_NE7c"></iframe>
-        </div>
-
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7n3PfR_NE7c"></iframe>
+          </div>
+  
+        </div> <!-- /content -->
       </div>
                         
     </div> <!-- /vertical-padding -->
@@ -274,7 +276,7 @@
 
 <!-- Time Pereirinha -->
 <div class="team">
-  <div class="container no-padding-at-small">
+  <div class="container">
 
     <div class="vertical-padding">
 
@@ -351,38 +353,28 @@
 
   <div class="vertical-padding">
     
-    <div class="donations__background-container">
-      <img class="donations__background"
-          srcset="<?php echo get_theme_file_uri('assets/images/backgrounds/donations-small-i.jpg 768w, ');
-                        echo get_theme_file_uri('assets/images/backgrounds/donations-medium-i.jpg 1200w, ');
-                        echo get_theme_file_uri('assets/images/backgrounds/donations-large-i.jpg 1920w'); ?>  " alt="..."s>
-    </div>
-    
-  
     <div class="container">
+
+      <!-- kids -->
+      <div class="donations__kids-container">
+        <div class="donations__kids-bg"></div>
+        <div class="donations__kids-pic"></div>
+      </div>
       
+      <h2 class="main-title donations__title">Doações</h2>
       
       <div class="row">
-        <div class="col-sm-12 col-lg-8">
-            <h2 class="main-title donations__title">Doações</h2>
+        <div class="col-xs-6 col-md-6">
           <div class="donations__container">
-            <p class="donations__content mb-4">Contribua para este sonho continuar crescendo</p>
-            <a href="#"><button class="btn btn--uppercase btn--hover-red">Clique aqui</button></a>
+            <p class="donations__content">Contribua para este sonho continuar crescendo</p>
+            <a href="#"><button class="btn btn--uppercase btn--hover-red">Seja um apoiador</button></a>
           </div>
         </div>
       </div>
       
-      <picture>
-        <source media="(min-width: 1200px)" srcset="<?php echo get_theme_file_uri('assets/images/elements/kids-large.png'); ?>">
-        <source media="(min-width: 992px)" srcset="<?php echo get_theme_file_uri('assets/images/elements/kids-medium.png'); ?>">
-        <img class="donations__kids" src="<?php echo get_theme_file_uri('assets/images/elements/kids-small.png'); ?>" alt="...">
-      </picture>
-  
-      <!-- <div class="donations__kids"></div> -->
     </div>
 
   </div> <!-- /vartical-padding -->
-
 
 </div>
 
@@ -395,10 +387,14 @@
 <!-- Contato -->
 <div class="contact text-primary" id="contato">
   <div class="container">
-    <h2 class="main-title">Contato</h2>
-    <div class="form-group">
-      <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+
+    <div class="vertical-padding">
+      <h2 class="main-title">Contato</h2>
+      <div class="form-group">
+        <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+      </div>
     </div>
+
   </div>
 </div>
 
