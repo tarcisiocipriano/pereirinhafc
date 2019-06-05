@@ -8,8 +8,8 @@
 
       <div class="carousel-item active">
         <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel01-wide.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel01.png'); ?>" alt="First slide">
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel01-wide.jpg'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel01.jpg'); ?>" alt="First slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
           <h5>Pereirinha Futebol Clube</h5>
@@ -18,8 +18,8 @@
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel02-wide.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel02.png'); ?>" alt="Second slide">
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel02-wide.jpg'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel02.jpg'); ?>" alt="Second slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
           <h5>Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
@@ -28,8 +28,8 @@
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel03-wide.png'); ?>">
-          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel03.png'); ?>" alt="Third slide">
+          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel03-wide.jpg'); ?>">
+          <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel03.jpg'); ?>" alt="Third slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
           <h5>...</h5>
@@ -71,76 +71,52 @@
 <!-- Jogos -->
 <div class="games" id="jogos">
   <div class="container">
+
     <div class="vertical-padding">
       <h2 class="main-title">Jogos</h2>
       <div class="row games__container">
     
-      <!-- Query -->
-      <?php
-        $today = date('Ymd');
-        $gamePosts = new WP_Query(array(
-          'posts_per_page' => 3,
-          'post_type' => 'game',
-          'meta_key' => 'data_do_jogo',
-          'orderby' => 'meta_value',
-          'order' => 'ASC',
-          'meta_query' => array(
-            array(
-              'key' => 'data_do_jogo',
-              'compare' => '>=',
-              'value' => $today,
-              'type' => 'DATE'
-            )
-          )
-        ));
-      ?>
-  
-      <!-- LOOP First Game -->
-      <div class="col-lg-7">
-        <?php 
-          $gamesCount = 1;
-          while($gamePosts->have_posts()) {
-            $gamePosts->the_post();
-            if($gamesCount == 1) { ?>
-              <div class="games__component games__component--blue">
-                <div class="games__date"><?php
-                  $gameDate = new DateTime(get_field('data_do_jogo'));
-                  echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
-                </div> <!-- /games__date -->
-                <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-                <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-                <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
-              </div> <!-- /games__component -->
-            <?php $gamesCount++; }
-          }
-        ?>
-      </div> <!-- /col -->
-  
-      <!-- LOOP After First Game -->
-      <div class="col-lg-5 col--after-first">
+        <!-- Query -->
         <?php
-          while($gamePosts->have_posts()) {
-            $gamePosts->the_post();
-            
-            if($gamesCount > 2) { ?>
-              <div class="games__component games__component--after-first">
-                <div class="games__date games__date--after-first"><?php
-                  $gameDate = new DateTime(get_field('data_do_jogo'));
-                  echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
-                </div> <!-- /games__date -->
-                <img class="games__team games__team--left games__team--after-first" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-                <img class="games__team games__team--right games__team--after-first" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-                <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
-              </div> <!-- /games__component -->
-            <?php   }
-            $gamesCount++;
-          }
+          $today = date('Ymd');
+          $gamePosts = new WP_Query(array(
+            'posts_per_page' => 3,
+            'post_type' => 'game',
+            'meta_key' => 'data_do_jogo',
+            'orderby' => 'meta_value',
+            'order' => 'ASC',
+            'meta_query' => array(
+              array(
+                'key' => 'data_do_jogo',
+                'compare' => '>=',
+                'value' => $today,
+                'type' => 'DATE'
+              )
+            )
+          ));
         ?>
-      </div> <!-- /col -->
-  
+    
+        <!-- LOOP First Game -->
+        <div class="col-lg-7">
+          <?php 
+            while($gamePosts->have_posts()) {
+              $gamePosts->the_post(); ?>
+                <div class="games__component games__component--blue">
+                  <div class="games__date"><?php
+                    $gameDate = new DateTime(get_field('data_do_jogo'));
+                    echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
+                  </div> <!-- /games__date -->
+                  <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+                  <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+                  <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
+                </div> <!-- /games__component -->
+            <?php } ?>
+        </div> <!-- /col -->
+    
       </div> <!-- /row -->
 
     </div> <!-- /vertical-padding -->
+
   </div> <!-- /container -->
 </div> <!-- /games -->
 
