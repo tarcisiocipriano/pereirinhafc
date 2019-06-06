@@ -94,7 +94,7 @@ function clean(done) {
 
 function watch_files() {
 	gulp.watch('source/data/**/*', data)
-	gulp.watch('source/images/**/*', files)
+	gulp.watch('source/files/**/*', files)
 	gulp.watch('source/fonts/**/*', fonts)
 	gulp.watch('source/images/**/*', images)
 	gulp.watch('source/movies/**/*', movies)

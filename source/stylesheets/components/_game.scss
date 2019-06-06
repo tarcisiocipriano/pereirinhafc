@@ -1,0 +1,56 @@
+.game {
+  margin-bottom: 8px;
+
+ 
+  
+  /* ------- date ------- */
+  &__date {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+  }
+  
+  &__day {
+    display: block;
+    margin-bottom: -8px ;
+
+    font-size: 1.75rem;
+    font-weight: 600;
+    
+    color: $mainRed;
+  }
+  
+  &__month {
+    display: block;
+
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $mainBlue;
+  }
+  
+  /* ------- content ------- */
+  &__content {
+    height: 80px;
+  }
+
+  &__team-thumb {
+    width: 50px;
+    height: auto;
+    background-color: #fff;
+  }
+
+  &__team-name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $mainBlue;
+  }
+  
+  &__time {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $mainRed;
+  }
+
+}

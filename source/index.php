@@ -70,53 +70,106 @@
 
 <!-- Jogos -->
 <div class="games" id="jogos">
-  <div class="container">
+  <!-- Query -->
+  <?php
+    $today = date('Ymd');
+    $gamePosts = new WP_Query(array(
+      'posts_per_page' => 3,
+      'post_type' => 'game',
+      'meta_key' => 'data_do_jogo',
+      'orderby' => 'meta_value',
+      'order' => 'ASC',
+      'meta_query' => array(
+        array(
+          'key' => 'data_do_jogo',
+          'compare' => '>=',
+          'value' => $today,
+          'type' => 'DATE'
+        )
+      )
+    ));
+  ?>
 
+  <div class="container">
     <div class="vertical-padding">
-      <h2 class="main-title">Jogos</h2>
-      <div class="row games__container">
+
+      <h2 class="main-title main-title--margin-bottom">Jogos</h2>
+
+      
+      
+      
+      
+      
+
+
+      <!-- game -->
+      
+        <?php while($gamePosts->have_posts()) {
+          $gamePosts->the_post(); ?>
+          <div class="row mb-2">
+
+            <div class="col-sm-2 col-lg-1 bg-dark">
+              <div class="game__day">04</div>
+              <div class="game__month">Jun</div>
+            </div>
+
+            <div class="col-sm-10 col-lg-11 bg-primary">
+              <div class="row">
+                <div class="col-12 col-lg-8 bg-danger">
+                  
+                  <div class="row">
+
+                    <div class="col-5 bg-success">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <img class="game__team-thumb" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+                        </div>
+                        <div class="col-md-10 text-left">
+                          <span class="game__team-name">PereirinhaFC</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-2 bg-warning">
+                      <div class="game__time">09:00</div>
+                    </div>
+
+                    <div class="col-5 bg-danger">
+                      <div class="row">
+                        <div class="col-md-10 text-right">
+                          <span class="game__team-name">Adversário</span>
+                        </div>
+                        <div class="col-md-2">
+                          <img class="game__team-thumb" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- /row -->
+        <?php } ?>
+
+        
     
-        <!-- Query -->
-        <?php
-          $today = date('Ymd');
-          $gamePosts = new WP_Query(array(
-            'posts_per_page' => 3,
-            'post_type' => 'game',
-            'meta_key' => 'data_do_jogo',
-            'orderby' => 'meta_value',
-            'order' => 'ASC',
-            'meta_query' => array(
-              array(
-                'key' => 'data_do_jogo',
-                'compare' => '>=',
-                'value' => $today,
-                'type' => 'DATE'
-              )
-            )
-          ));
-        ?>
-    
-        <!-- LOOP First Game -->
-        <div class="col-lg-7">
-          <?php 
-            while($gamePosts->have_posts()) {
-              $gamePosts->the_post(); ?>
-                <div class="games__component games__component--blue">
-                  <div class="games__date"><?php
-                    $gameDate = new DateTime(get_field('data_do_jogo'));
-                    echo $gameDate->format('d') . '/' . $gameDate->format('m');?>
-                  </div> <!-- /games__date -->
-                  <img class="games__team games__team--left" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-                  <img class="games__team games__team--right" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-                  <img class="games__field img-fluid" src="<?php echo get_theme_file_uri('assets/images/bg_campo.png'); ?>" alt="">
-                </div> <!-- /games__component -->
-            <?php } ?>
-        </div> <!-- /col -->
-    
-      </div> <!-- /row -->
+      
+
+
+
+
+      
+
+      <div class="row">
+        <div class="col-lg-8">
+          <button class="btn btn--uppercase">Veja mais</button>
+        </div>
+      </div>
 
     </div> <!-- /vertical-padding -->
-
   </div> <!-- /container -->
 </div> <!-- /games -->
 
