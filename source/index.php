@@ -2,8 +2,15 @@
 
 <!-- Carousel -->
 <div class="bd-example">
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <div id="carouselPereirinhaFC" class="carousel slide" data-ride="carousel">
+  
+    <div class="carousel__overlay"></div>
     
+    <ol class="carousel-indicators">
+      <li data-target="#carouselPereirinhaFC" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselPereirinhaFC" data-slide-to="1"></li>
+      <li data-target="#carouselPereirinhaFC" data-slide-to="2"></li>
+    </ol>
     <div class="carousel-inner">
 
       <div class="carousel-item active">
@@ -12,8 +19,8 @@
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel01.jpg'); ?>" alt="First slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Pereirinha Futebol Clube</h5>
-          <p>Futebol Cidadão</p>
+          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          <!-- <p>Futebol Cidadão</p> -->
         </div>
       </div>
       <div class="carousel-item">
@@ -22,8 +29,8 @@
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel02.jpg'); ?>" alt="Second slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
-          <p>...</p>
+          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          <!-- <p>...</p> -->
         </div>
       </div>
       <div class="carousel-item">
@@ -32,8 +39,8 @@
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel03.jpg'); ?>" alt="Third slide">
         </picture>
         <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
+          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          <!-- <p>...</p> -->
         </div>
       </div>
       
@@ -57,14 +64,14 @@
 
     </div>
     
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <!-- <a class="carousel-control-prev" href="#carouselPereirinhaFC" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#carouselPereirinhaFC" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a>
+    </a> -->
   </div>
 </div>
 
