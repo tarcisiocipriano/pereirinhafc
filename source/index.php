@@ -113,7 +113,37 @@
       
         <?php while($gamePosts->have_posts()) {
           $gamePosts->the_post(); ?>
-          <div class="row mb-2">
+
+
+
+          <div class="game clearfix">
+            <div class="game__date">
+              <span class="game__day">04</span>
+              <span class="game__month">JUN</span>
+            </div>
+            
+            <div class="game__content">
+              <div class="game__player game__player--one">
+                <img class="game__player-thumb" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
+                <span class="game__player-name">PereirinhaFC</span>
+              </div>
+              <div class="game__player game__player--two">
+                <span class="game__player-name">Adversário</span>
+                <img class="game__player-thumb" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
+              </div>
+              <div class="game__time">09:00</div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+          <!-- <div class="row mb-2">
 
             <div class="col-sm-2 col-lg-1 bg-dark">
               <div class="game__day">04</div>
@@ -129,7 +159,6 @@
                     <div class="col-5 bg-success">
                       <div class="row">
                         <div class="col-md-2">
-                          <img class="game__team-thumb" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
                         </div>
                         <div class="col-md-10 text-left">
                           <span class="game__team-name">PereirinhaFC</span>
@@ -147,7 +176,6 @@
                           <span class="game__team-name">Adversário</span>
                         </div>
                         <div class="col-md-2">
-                          <img class="game__team-thumb" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
                         </div>
                       </div>
                     </div>
@@ -158,7 +186,9 @@
               </div>
             </div>
 
-          </div> <!-- /row -->
+          </div> -->
+
+
         <?php } ?>
 
         
