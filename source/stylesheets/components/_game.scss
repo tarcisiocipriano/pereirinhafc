@@ -1,109 +1,261 @@
+// this value + 80 of the date == the breakpoint 768
+$max-width: 688px;
+
+$date-width-xs: 100%;
+$date-width-sm: 80px;
+
+$date-height-xs: 60px;
+$date-height-sm: 80px;
+
+$players-height-xs: 180px;
+$players-height-sm: 80px;
+
+
+/* ------------------------- container ------------------------- */
 .game {
+  height: $date-height-xs + $players-height-xs;
   margin-bottom: 8px;
+
+  position: relative;
+  
+  @include atSmall {
+    max-width: $max-width - $date-width-sm;
+    height: $date-height-sm;
+  }
  
   
-  /* ------- date ------- */
+  /* ------------------------- date ------------------------- */
+  // container
   &__date {
-    width: 80px;
-    height: 80px;
-    text-align: center;
+    width: $date-width-xs;
+    height: $date-height-xs;
 
     background-color: #EAEAEC;
-    float: left;
+
+    position: relative;
+
+    @include atSmall {
+      width: $date-width-sm;
+      height: 80px;
+    }
+
+    // container to center align the content
+    &-container {
+      width: 100%;
+      text-align: center;
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
   
   &__day {
-    display: block;
-    margin-bottom: -8px ;
-
     font-size: 1.75rem;
     font-weight: 600;
-    
     color: $mainRed;
+    
+    @include atSmall {
+      display: block;
+      margin-bottom: -8px;
+    }
   }
   
   &__month {
-    display: block;
-
     font-size: 1.125rem;
     font-weight: 600;
-    text-transform: uppercase;
-
     color: $mainBlue;
+    
+    text-transform: uppercase;
+        
+    @include atSmall {
+      display: block;
+    }
   }
   
-  /* ------- content ------- */
-  &__content {
+  /* ------------------------- players ------------------------- */
+  // container
+  &__players {
     width: 100%;
-    max-width: 700px;
-    height: 80px;
+    height: $players-height-xs;
 
+    position: absolute;
+    top: $date-height-xs;
+    
     background-color: $white;
-    position: relative;
+    
+    @include atSmall {
+      height: $players-height-sm;
+      top: 0;
 
-    float: left;
+      // offset from the left
+      left: $date-width-sm;
+    }
   }
 
   // player
   &__player {
     width: 50%;
     height: 100%;
+    text-align: center;
 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 
     &--one {
-      padding-left: 24px;
-      text-align: left;
       left: 0;
-
-      background-color: green;
     }
     
     &--two {
-      padding-right: 24px;
-      text-align: right;
       right: 0;
-
-      background-color: purple;
     }
   }
 
+   // thumb
   &__player-thumb {
     width: 50px;
-    height: auto;
-    background-color: #fff;
+    height: 32%;
+
+    position: absolute;
+    top: 18%;
+
+    @include atSmall {
+      height: 50px;
+      top: 50%;
+    }
+    
+    &--one {
+      left: 50%;
+      transform: translateX(-50%);
+      
+      @include atSmall {
+        transform: translateY(-50%);
+        left: 24px;
+      }
+    }
+    
+    &--two {
+      right: 50%;
+      transform: translateX(50%);
+      
+      @include atSmall {
+        transform: translateY(-50%);
+        right: 24px;
+      }
+    }
+
+    display: inline-block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
+  // name
   &__player-name {
     font-size: 1rem;
     font-weight: 600;
     color: $mainBlue;
+    text-align: center;
+
+    max-width: 172px;
+
+    line-height: 1;
+
+    position: absolute;
+    bottom: 32%;
     
     @include atSmall {
-      font-size: 1.75rem;
+      bottom: 50%;
+    }
+    
+    &--one {
+      left: 50%;
+      transform: translateY(50%) translateX(-50%);
+      
+      @include atSmall {
+        text-align: left;
+        left: 80px;
+        transform: translateY(50%);
+      }
+    }
+    
+    &--two {
+      right: 50%;
+      transform: translateY(50%) translateX(50%);
+      
+      @include atSmall {
+        text-align: right;
+        right: 80px;
+        transform: translateY(50%);
+      }
+    }
+    
+    @include atSmall {
+      font-size: 1.5rem;
     }
   }
 
   // time
   &__time {
-    display: none;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $mainRed;
+
+
+    &--date {
+      display: inline;
+      
+      @include atSmall {
+        display: none;
+      }
+    }
+
+    &--content {
+      width: 100%;
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      text-align: center;
+
+      display: none;
+
+      @include atSmall {
+        display: block;
+      }
+
+    }
+    
+  }
+
+  &__vs {
     width: 100%;
+    text-align: center;
 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 
-    // font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
+    font-size: 1.75rem;
     color: $mainRed;
-    
+
+    display: block;
+
     @include atSmall {
-      font-size: 1.75rem;
-      display: block;
+      display: none;
     }
+
   }
+
+}
+
+.game__btn-container {
+  width: 100%;
   
+  @include atSmall {
+    width: 688px;
+  }
 }

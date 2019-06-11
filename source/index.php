@@ -102,108 +102,39 @@
 
       <h2 class="main-title main-title--margin-bottom">Jogos</h2>
 
-      
-      
-      
-      
-      
-
-
       <!-- game -->
-      
-        <?php while($gamePosts->have_posts()) {
-          $gamePosts->the_post(); ?>
+      <?php while($gamePosts->have_posts()) {
+        $gamePosts->the_post();?>
 
+        <?php $gameDate = new DateTime(get_field('data_do_jogo')); ?>
 
-
-          <div class="game clearfix">
-            <div class="game__date">
-              <span class="game__day">04</span>
-              <span class="game__month">JUN</span>
-            </div>
-            
-            <div class="game__content">
-              <div class="game__player game__player--one">
-                <img class="game__player-thumb" src="<?php echo get_field('time_1')['url']; ?>" alt="time1">
-                <span class="game__player-name">PereirinhaFC</span>
-              </div>
-              <div class="game__player game__player--two">
-                <span class="game__player-name">Adversário</span>
-                <img class="game__player-thumb" src="<?php echo get_field('time_2')['url']; ?>" alt="time2">
-              </div>
-              <div class="game__time">09:00</div>
+        <div class="game">
+          <div class="game__date">
+            <div class="game__date-container">
+              <span class="game__day"><?php echo $gameDate->format('d'); ?></span>
+              <span class="game__month"><?php echo $gameDate->format('M'); ?></span>
+              <span class="game__time game__time--date"><?php echo '-' . $gameDate->format('H') . ':' . $gameDate->format('i'); ?></span>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-          <!-- <div class="row mb-2">
-
-            <div class="col-sm-2 col-lg-1 bg-dark">
-              <div class="game__day">04</div>
-              <div class="game__month">Jun</div>
+          
+          <div class="game__players">
+            <div class="game__player game__player--one">
+              <div class="game__player-thumb game__player-thumb--one" style="background-image: url(<?php echo get_field('time_1')['url']; ?>)"></div>
+              <span class="game__player-name game__player-name--one">PereirinhaFC</span>
             </div>
-
-            <div class="col-sm-10 col-lg-11 bg-primary">
-              <div class="row">
-                <div class="col-12 col-lg-8 bg-danger">
-                  
-                  <div class="row">
-
-                    <div class="col-5 bg-success">
-                      <div class="row">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-10 text-left">
-                          <span class="game__team-name">PereirinhaFC</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-2 bg-warning">
-                      <div class="game__time">09:00</div>
-                    </div>
-
-                    <div class="col-5 bg-danger">
-                      <div class="row">
-                        <div class="col-md-10 text-right">
-                          <span class="game__team-name">Adversário</span>
-                        </div>
-                        <div class="col-md-2">
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
+            <div class="game__player game__player--two">
+              <div class="game__player-thumb game__player-thumb--two" style="background-image: url(<?php echo get_field('time_2')['url']; ?>)"></div>
+              <span class="game__player-name game__player-name--two">Adversário Teste</span>
             </div>
-
-          </div> -->
-
-
-        <?php } ?>
-
-        
-    
-      
-
-
-
-
-      
-
-      <div class="row">
-        <div class="col-lg-8">
-          <button class="btn btn--uppercase">Veja mais</button>
+            <span class="game__time game__time--content"><?php echo $gameDate->format('H') . ':' . $gameDate->format('i'); ?></span>
+            <span class="game__vs">vs</span>
+          </div>
         </div>
+
+      <?php } ?>
+        
+      <div class="game__btn-container text-right">
+        <button class="btn btn--uppercase">Veja mais</button>
       </div>
 
     </div> <!-- /vertical-padding -->
