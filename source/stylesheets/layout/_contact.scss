@@ -1,18 +1,43 @@
 .contact {
   background-color: #1C2335;
+
+  label {
+    color: $grey4;
+  }
   
   input, textarea {
-    color: white;
+    color: $grey4;
     background-color: #262C3C !important;
     border: none;
 
     &, &:hover, &:focus, &:active {
-      color: white;
+      color: $grey4;
       background-color: #262C3C;
     }
   }
 
   padding: 0 !important;
   margin: 0 !important;
+
+  &__info {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 28px;
+    }
+
+    i {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      margin-right: 16px;
+      color: $grey4;
+    }
+
+    span {
+      color: $grey4;
+    }
+  }
   
 }

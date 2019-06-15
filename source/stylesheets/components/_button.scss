@@ -4,6 +4,7 @@
   padding: 10px 32px;
   
   &:focus, &:hover {
+    background: $white;
     box-shadow: none;
   }
 

@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 
 <!-- Carousel -->
-<div class="bd-example">
+<div class="carousel">
   <div id="carouselPereirinhaFC" class="carousel slide" data-ride="carousel">
   
-    <div class="carousel__overlay"></div>
     
     <ol class="carousel-indicators">
       <li data-target="#carouselPereirinhaFC" data-slide-to="0" class="active"></li>
       <li data-target="#carouselPereirinhaFC" data-slide-to="1"></li>
       <li data-target="#carouselPereirinhaFC" data-slide-to="2"></li>
     </ol>
+
     <div class="carousel-inner">
 
       <div class="carousel-item active">
@@ -18,51 +18,45 @@
           <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel01-wide.jpg'); ?>">
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel01.jpg'); ?>" alt="First slide">
         </picture>
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
-          <!-- <p>Futebol Cidadão</p> -->
+        <div class="carousel-caption text-left d-none d-md-block">
+          <div class="carousel-caption__vertical-center container-fluid">
+          	<h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          	<a href="#"><button class="btn btn--uppercase">Veja mais</button></a>
+          </div>
         </div>
       </div>
+      
       <div class="carousel-item">
         <picture>
           <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel02-wide.jpg'); ?>">
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel02.jpg'); ?>" alt="Second slide">
         </picture>
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
-          <!-- <p>...</p> -->
+        <div class="carousel-caption text-left d-none d-md-block">
+          <div class="carousel-caption__vertical-center container-fluid">
+          	<h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          	<a href="#"><button class="btn btn--uppercase">Veja mais</button></a>
+          </div>
         </div>
       </div>
+      
       <div class="carousel-item">
         <picture>
           <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri('assets/images/carousel/carousel03-wide.jpg'); ?>">
           <img class="d-block w-100" src="<?php echo get_theme_file_uri('assets/images/carousel/carousel03.jpg'); ?>" alt="Third slide">
         </picture>
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
-          <!-- <p>...</p> -->
+        <div class="carousel-caption text-left d-none d-md-block">
+          <div class="carousel-caption__vertical-center container-fluid">
+          	<h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          	<a href="#"><button class="btn btn--uppercase">Veja mais</button></a>
+          </div>
         </div>
       </div>
+
+      <div class="carousel__overlay"></div>
+
       
-      <!-- <?php
-        $firstNews = true;
-        while(have_posts()) {
-          the_post(); 
-
-          if($firstNews) echo '<div class="carousel-item active">'; else echo '<div class="carousel-item">'; ?>
-          <div style="background-image: url('<?php echo get_the_post_thumbnail('newsCarousel'); ?>')"></div>
-            <?php the_post_thumbnail('newsCarousels', array('class' => 'd-block w-100 h-100')); ?>
-            <img src="<?php echo get_theme_file_uri('assets/images/ufo2.jpg'); ?>" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><?php the_title(); ?></h5>
-              <p><?php if(has_excerpt()) {echo get_the_excerpt();} else {echo wp_trim_words(get_the_content(), 8);} ?></p>
-            </div>
-          </div>
-
-        <?php $firstNews = false; }
-      ?> -->
-
     </div>
+
     
     <!-- <a class="carousel-control-prev" href="#carouselPereirinhaFC" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -99,6 +93,12 @@
 
   <div class="container">
     <div class="vertical-padding">
+
+    <!-- kids -->
+      <div class="games__kids-container">
+        <div class="games__kids-bg"></div>
+        <div class="games__kids-pic"></div>
+      </div>
 
       <h2 class="main-title main-title--margin-bottom">Jogos</h2>
 
@@ -376,10 +376,10 @@
 </div>
 
 <!-- Location -->
-<div class="location">
+<!-- <div class="location">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8376709304503!2d-34.89727842609615!3d-8.015670004083349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1837424d28c9%3A0x18a2354d60d97c5!2sR.+Alto+do+Pereirinha+-+%C3%81gua+Fria%2C+Recife+-+PE%2C+52130-022!5e0!3m2!1spt-BR!2sbr!4v1558222309712!5m2!1spt-BR!2sbr"
     width="100%" height="303" frameborder="0" style="border:0; display: block;" allowfullscreen></iframe>
-</div>
+</div> -->
 
 <!-- Contato -->
 <div class="contact text-primary" id="contato">
@@ -387,8 +387,36 @@
 
     <div class="vertical-padding">
       <h2 class="main-title">Contato</h2>
-      <div class="form-group">
-        <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+
+          <ul class="contact__info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>(Endereço vai aqui)</span>
+            </li>
+            <li>
+              <i class="far fa-envelope"></i>
+              <span>pereirinhafc@hotmail.com</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>(81) 98810-0010</span>
+            </li>
+          </ul>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8376709304503!2d-34.89727842609615!3d-8.015670004083349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1837424d28c9%3A0x18a2354d60d97c5!2sR.+Alto+do+Pereirinha+-+%C3%81gua+Fria%2C+Recife+-+PE%2C+52130-022!5e0!3m2!1spt-BR!2sbr!4v1558222309712!5m2!1spt-BR!2sbr"
+            width="100%" height="303" frameborder="0" style="border:0; display: block;" allowfullscreen></iframe>
+
+        </div>
+
       </div>
     </div>
 

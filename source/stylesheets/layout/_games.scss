@@ -1,105 +1,60 @@
 .games {
   background-image: url("../assets/images/backgrounds/grass.jpg");
+  position: relative;
   
-  &__container {
-    padding-top: 80px;
-  }
-
-  /* ---------- component ---------- */ 
-  &__component {
-    position: relative;
-    width: auto;
-    max-width: 744px;
-
-    &--after-first {
-      margin-top: 30px;
-    }
-
-    @include atMedium {
-      &--after-first {
-        margin-top: 50px;
-      }
-    }
-
-  }
-
-  &__field {
-    width: auto;
-    max-width: 744px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* ---------- date ---------- */ 
-  &__date {
-    color: white;
-    width: 100%;
-    text-align: center;
-    font-size: 1.25rem;
-
-    position: absolute;
-    top: -40px;
-    left: 0;
-
-    &--after-first {
-      font-size: 1.25rem;
-    }
-
-    @include atSmallest--teams {
-      font-size: 2.25rem;
-      top: -50px;
-    }
-
-    @include atMedium {
-      &--after-first {
-        font-size: 1.6rem;
-      }
-    }
-
-    @include atLarge {
-      &--after-first {
-        font-size: 1.75rem;
-      }
-    }
-  }
-
-  /* ---------- teams ---------- */ 
-  &__team {
-    width: auto;
-    height: 50px;
-    position: absolute;
-    top: -50px;
-
-    &--left {
-      left: 26%;
-    }
-
-    &--right {
-      right: 26%;
-    }
-
-    @include atSmallest--teams {
-      height: 60px;
-    }
-
-    @include atSmall {
-      height: 80px;
-    }
-
-    @include atMedium {
-      &--after-first {
-        height: 60px;
-      }
-    }
-  }
-
-}
-
-.col {
-  
+  /* ------- kids ------- */
   @include atMedium {
-    &--after-first {
-      margin-top: -100px;
+    &__kids-container {
+      overflow: hidden;
+      width: 40%;
+      height: 80%;
+
+      box-sizing: content-box;
+      padding-bottom: 16px;
+
+      position: absolute;
+      bottom: -16px;
+      right: 0;
+      z-index: 2;
+    }
+  
+
+    // pic
+    &__kids-pic {
+      background-image: url("../assets/images/kids/kids-running.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0 center;
+
+      width: 70%;
+      height: 100%;
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 5%;
+
+      @include atLarge {
+        width: 80%;
+        right: 15%;
+      }
+    }
+
+    // bg
+    &__kids-bg {
+      width: 80%;
+      height: 100%;
+
+      transform: skew(-10deg);
+      background-color: $mainBlue;
+
+      position: absolute;
+      top: 0;
+      right: -100px;
+
+      @include atLarge {
+        width: 100%;
+      }
     }
   }
 }
