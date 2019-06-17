@@ -34,16 +34,25 @@
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 160px;
+    margin-bottom: 80px;
     
-    @include atMedium {
-      font-size: 4rem;
-    }
-
+    
     animation-name: example;
     animation-duration: 1s;
   }
+  
+  @include atSmall {
+    
+  }
+  
+  @include atMedium {
+    &__title {
+      font-size: 4rem;
+      margin-bottom: 160px;
+    }
+  }
+
 }

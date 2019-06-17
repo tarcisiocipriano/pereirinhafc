@@ -1,0 +1,184 @@
+.titles {
+  position: relative;
+  overflow: hidden;
+  
+  /* ----------------- header ----------------- */
+  &__header-container {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    background-color: $mainBlue;
+    
+    text-align: center;
+  }
+  
+  &__header-content {
+    width: 100%;
+    height: auto;
+  }
+  
+  &__header {
+    color: $white;
+  }
+  
+  @include atSmall {
+    &__header-container {
+      width: 33%;
+      height: 100%;
+      transform: skewX(-10deg);
+
+      position: absolute;
+      left: -5%;
+
+      z-index: 1;
+    }
+
+    &__header-content {
+      padding-left: 30px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) skewX(10deg);
+    }
+  }
+
+  @include atMedium {
+    &__header-container {
+      width: 32%;
+    }
+
+    &__header-content {
+      padding-left: 60px;
+    }
+  }
+
+  @include atLarge {
+    &__header-container {
+      width: 28%;
+    }
+
+    &__header-content {
+      padding-left: 80px;
+    }
+  }
+  
+  /* ----------------- slick ----------------- */
+  &__slick {
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  &__item {
+    outline: none;
+  }
+
+  &__image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $mainBlue;
+  }
+  
+  &__description {
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $mainGrey;
+  }
+
+  @include atSmall {
+    &__slick {
+      margin-left: 30%;
+      padding: 32px 0 52px 0;
+    }
+  }
+  
+  @include atMedium {
+    &__slick {
+      margin-left: 18%;
+    }
+    
+    &__image {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+  }
+
+
+  /* ----------------- slider ----------------- */
+  .slick {
+
+    &-arrow {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      z-index: 1;
+      &::before {
+        color: $mainBlue !important;
+      }
+    }
+
+    &-prev {
+      left: 20px;
+    }
+
+    &-next {
+      right: 20px;
+    }
+
+    &-dotted.slick-slider {
+      margin-bottom: 0;
+    }
+
+    &-dots {
+
+      display: block;
+      justify-content: center;
+      position: absolute;
+      bottom: 20px;
+      
+      li {
+        width: 8px;
+        height: 8px;
+        margin: 0 16px;
+      }
+    
+      button {
+        display: block;
+        
+        width: 8px;
+        height: 8px;
+        margin: 5px;
+        
+        border: none;
+        background-color: $mainGrey;
+        
+        text-indent: -9999px;
+      }
+    
+      li.slick-active button {
+        background-color: $mainBlue;
+      }
+    }
+
+    @include atSmall {
+      &-arrow {
+        display: none;
+      }
+    }
+
+  }
+
+}

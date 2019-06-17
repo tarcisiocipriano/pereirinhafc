@@ -33,7 +33,7 @@
         </picture>
         <div class="carousel-caption text-left d-none d-md-block">
           <div class="carousel-caption__vertical-center container-fluid">
-          	<h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          	<h5 class="carousel__title">referência no trabalho com crianças e adolescentes.</h5>
           	<a href="#"><button class="btn btn--uppercase">Veja mais</button></a>
           </div>
         </div>
@@ -46,7 +46,7 @@
         </picture>
         <div class="carousel-caption text-left d-none d-md-block">
           <div class="carousel-caption__vertical-center container-fluid">
-          	<h5 class="carousel__title">Futebol como ferramenta de inclusão social, educação e cidadania.</h5>
+          	<h5 class="carousel__title">Responsabilidade social, ética, respeito e transparência.</h5>
           	<a href="#"><button class="btn btn--uppercase">Veja mais</button></a>
           </div>
         </div>
@@ -131,7 +131,7 @@
           </div>
         </div>
 
-      <?php } ?>
+      <?php } wp_reset_postdata(); ?>
         
       <div class="game__btn-container text-right">
         <button class="btn btn--uppercase">Veja mais</button>
@@ -249,24 +249,39 @@
 
 <!-- Titulos -->
 <div class="titles">
+
+  <?php
+    $today = date('Ymd');
+    $titlePosts = new WP_Query(array(
+      'posts_per_page' => -1,
+      'post_type' => 'title',
+      // 'order' => 'ASC'
+    ));
+  ?>
+
+  <div class="titles__header-container">
+    <div class="titles__header-content">
+      <h3 class="titles__header main-title">Títulos</h3>
+    </div>
+  </div>
+
+  
+  
   <div class="container-fluid">
 
-    <div class="vertical-padding">
+    <div class="row titles__slick">
+      <?php while($titlePosts->have_posts()) {
+        $titlePosts->the_post(); ?>
 
-      <!-- winnings -->
-      <div class="winnings">
-        <h3 class="text-center">Títulos Conquistados</h3>
-  
-        <div class="winnings__group">
-          <h4 class="text-center">2018</h4>
-          
-          <div class="winnings__card">
-  
-          </div>
+        <div class="col-md-3 titles__item">
+          <img class="titles__image" src="<?php echo get_theme_file_uri('assets/images/elements/trophy.png'); ?>" alt="desenho de um troféu">
+          <span class="titles__description"><?php echo get_field('ano') . ' - ' . get_field('campeonato'); ?></span><br>
+          <span class="titles__title"><?php echo get_field('time') . ' - ' . get_field('categoria'); ?></span>
         </div>
-      </div>
-      
-    </div> <!-- /vertical-padding -->
+
+      <?php } wp_reset_postdata(); ?>
+
+    </div>
 
   </div> <!-- /container -->
 </div> <!-- /about -->
@@ -375,12 +390,6 @@
 
 </div>
 
-<!-- Location -->
-<!-- <div class="location">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8376709304503!2d-34.89727842609615!3d-8.015670004083349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1837424d28c9%3A0x18a2354d60d97c5!2sR.+Alto+do+Pereirinha+-+%C3%81gua+Fria%2C+Recife+-+PE%2C+52130-022!5e0!3m2!1spt-BR!2sbr!4v1558222309712!5m2!1spt-BR!2sbr"
-    width="100%" height="303" frameborder="0" style="border:0; display: block;" allowfullscreen></iframe>
-</div> -->
-
 <!-- Contato -->
 <div class="contact text-primary" id="contato">
   <div class="container">
@@ -389,14 +398,17 @@
       <h2 class="main-title">Contato</h2>
       <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <div class="form-group">
             <?php echo do_shortcode( '[contact-form-7 id="224" title="Contact form"]' ); ?>
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6">
 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8376709304503!2d-34.89727842609615!3d-8.015670004083349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1837424d28c9%3A0x18a2354d60d97c5!2sR.+Alto+do+Pereirinha+-+%C3%81gua+Fria%2C+Recife+-+PE%2C+52130-022!5e0!3m2!1spt-BR!2sbr!4v1558222309712!5m2!1spt-BR!2sbr"
+            width="100%" height="303" frameborder="0" style="border:0; display: block;" allowfullscreen></iframe>
+          
           <ul class="contact__info">
             <li>
               <i class="fas fa-map-marker-alt"></i>
@@ -411,10 +423,7 @@
               <span>(81) 98810-0010</span>
             </li>
           </ul>
-
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8376709304503!2d-34.89727842609615!3d-8.015670004083349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1837424d28c9%3A0x18a2354d60d97c5!2sR.+Alto+do+Pereirinha+-+%C3%81gua+Fria%2C+Recife+-+PE%2C+52130-022!5e0!3m2!1spt-BR!2sbr!4v1558222309712!5m2!1spt-BR!2sbr"
-            width="100%" height="303" frameborder="0" style="border:0; display: block;" allowfullscreen></iframe>
-
+          
         </div>
 
       </div>
